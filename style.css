@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    /* background: url("assets/vector.png") no-repeat; */
+    background: linear-gradient(-45deg, #d1e5ff, #FFFFF6,#e3f9ff ,#fff4ef);
+    background-size: 400% 400%;
+    /* animation: gradient 12s ease infinite; */
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    width: 95px;
+    height: 35px;
+    text-decoration: none;
+}
+
+.navbar-nav a {
+    font-family: 'Barlow', sans-serif;
+}
+
+.login-btn {
+    background-color: white;
+    color: black;
+}
+
+.register-btn {
+    background-color: black;
+    color: white;
+}
+
+.heading-1 {
+    font-size: 65px;
+}
+
+.heading-2 {
+    font-size: 50px;
+}
+
+
+.text-yellow {
+    color: #FAB55A;
+}
+
+.search-input {
+    height: 50px;
+    border-width: 2px 1px 2px 2px;
+    border-color: black;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 130px;
+    border-width: 2px 2px 2px 0px;
+    background-color: #FFE187;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.search-input:focus {
+    border-color: black;
+    box-shadow: none;  
+}
+
+.fs-6 {
+    font-size: 16px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* .features {
+    background-color: #FAFDFF;
+    
+} */
+
+.f-btn {
+    text-decoration: none;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.square-bg {
+    background-color: #E8EBF5;
+}
+
+.fi {
+    font-size: 6rem;
+    padding: 40px;
+    color: #315b8b;
+}
