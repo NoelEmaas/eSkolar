@@ -13,11 +13,11 @@
 </head>
 
 <body style="background: linear-gradient(0deg, #EDE9E6, #EDE9E6, #f4f9ff,  #ffffff);"">
-    <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
         <div class="container flex flex-wrap items-center justify-between mx-auto w-full">
-            <a href="https://flowbite.com/" class="flex items-center">
+            <a href="" class="flex items-center">
                 <img src="{{ asset('assets/logo.svg') }}" class="h-6 mr-3 sm:h-9" alt="Logo">
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white font-logo-font" style="font-family: 'Fira Sans', sans-serif;">eSkolar</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap" style="font-family: 'Fira Sans', sans-serif;">eSkolar</span>
             </a>
             <div class="flex md:order-2">
                 <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Get started</button>
@@ -48,7 +48,7 @@
         </div>
     </nav>
 
-    <div class="w-screen 2xl:pt-20 xl:pt-20 lg:pt-20">
+    <div class="w-screen 2xl:pt-36 xl:pt-24 lg:pt-20 md:pt-20 2xl:h-screen">
         <div class="flex flex-col lg:flex-row w-screen 2xl:pl-10">
           <div class="lg:w-1/2 xl:p-20 p-12 pt-20 md: flex items-center justify-center flex-col">
             <h1 class="2xl:text-7xl text-6xl font-bold text-gray-800">
@@ -77,7 +77,7 @@
     </div>
       
     <div class="w-screen pt-16">
-        <h1 class="xl:text-6xl text-5xl text-center font-bold">What's Our Purpose</h1>
+        <h1 class="xl:text-6xl md:text-5xl text-4xl text-center font-bold">What's Our Purpose</h1>
         <p class="text-center xl:w-[65%] md:w-[85%] sm:w-[85%] w-[85%] pt-4 mx-auto">This tool aims to simplify the scholarship search process for students by providing reliable information and instructions for legitimate scholarships. Additionally, it aims to assist educational institutions in providing accurate information to students seeking financial assistance.</p>
         <div class="flex flex-wrap justify-center items-center w-full lg:space-x-10 mt-20 lg:px-1 px-10 md:px-0 md:space-y-0 md:space-x-[1%] 2xl:space-y-0 xl:space-y-0 lg:space-y-0 space-y-4 min-w-sm">
             <div class="2xl:w-[400px] 2xl:h-[500px] lg:w-[300px] lg:h-[400px] md:w-[250px] md:h-[380px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -134,9 +134,31 @@
 
     </div>
 
-    <div class="h-[300px] w-screen bg-white flex items-center justify-center">
-        <h1 class="xl:text-6xl text-4xl text-center font-bold">footer ni</h1>
-    </div>
-
+    <footer class="bg-white shadow w-screen">
+      <div class="w-full container mx-auto p-4 md:px-6 md:py-8 px-6">
+          <div class="sm:flex sm:items-center sm:justify-between">
+              <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                  <img src="{{ asset('assets/logo.svg') }}" class="h-6 mr-3 sm:h-9" alt="Logo">
+                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white" style="font-family: 'Fira Sans', sans-serif;">eSkolar</span>
+              </a>
+              <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+                  <li>
+                      <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                  </li>
+                  <li>
+                      <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                  </li>
+                  <li>
+                      <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                  </li>
+                  <li>
+                      <a href="#" class="hover:underline">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© <a href="" class="hover:underline">eSkolar™</a>. All Rights Reserved.</span>
+      </div>
+    </footer>
 </body>
 </html>
