@@ -41,7 +41,7 @@
 .search input{
     height: 60px;
     text-indent: 25px;
-    border: 1px solid #DEE2E6;
+    border: 1px solid #D2D2D2;
     transition: 0.3s;
 }
 
@@ -70,6 +70,17 @@
 .ui-w-40 {
     width: 40px !important;
     height: auto;
+}
+
+.post-content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 105px;
+    max-height: 105px;
 }
 
 @media (max-width: 1400px) {
