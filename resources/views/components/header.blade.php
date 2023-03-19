@@ -1,31 +1,28 @@
-<nav class="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
-    <div class="container flex flex-wrap items-center justify-between mx-auto w-full">
-        <a href="" class="flex items-center">
-            <img src="{{ asset('assets/logo.svg') }}" class="h-6 mr-3 sm:h-9" alt="Logo">
-            <span class="self-center text-xl font-semibold whitespace-nowrap" style="font-family: 'Fira Sans', sans-serif;">eSkolar</span>
-        </a>
-        <div class="flex md:order-2">
-            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Get started</button>
-            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        </button>
-        </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-16 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
-                <li>
-                    <a href="/" class="block py-2 pl-3 pr-4 md:bg-transparent md:hover:text-blue-700 md:p-0 {{ $currentPage == 'home' ? 'text-white bg-blue-700 rounded md:text-blue-700' : 'text-gray-700 rounded' }}">Home</a>
-                </li>
-                <li>
-                    <a href="scholarship" class="block py-2 pl-3 pr-4 md:bg-transparent md:hover:text-blue-700 md:p-0 {{ $currentPage == 'scholarship' ? 'text-white bg-blue-700 rounded md:text-blue-700' : 'text-gray-700 rounded' }}">Scholarships</a>
-                </li>
-                <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 md:bg-transparent md:hover:text-blue-700 md:p-0 {{ $currentPage == 'forums' ? 'text-white bg-blue-700 rounded md:text-blue-700' : 'text-gray-700 rounded' }}">Forums</a>
-                </li>
-                <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 md:bg-transparent md:hover:text-blue-700 md:p-0 {{ $currentPage == 'contacts' ? 'text-white bg-blue-700 rounded md:text-blue-700' : 'text-gray-700 rounded' }}">Contact</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg border border-bottom-2 px-0 px-xxl-5 px-xl-5 px-lg-5 py-3 fixed-top bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="px-2" src="{{ asset('assets/logo.svg') }}" alt="" height="30">
+        <span style="font-family: 'Fira Sans', sans-serif; font-size: 18px;"> eSkolar</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center w-100" style="font-size: 14px; font-weight: 500;">
+          <li class="nav-item px-1 px-xxl-4 px-xl-4 px-lg-4 py-1">
+            <a class="nav-link active {{ $currentPage == 'home' ? 'text-primary-emphasis fw-semibold' : '' }} " aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item px-1 px-xxl-4 px-xl-4 px-lg-4 py-1">
+            <a class="nav-link active {{ $currentPage == 'scholarships' ? 'text-primary-emphasis fw-semibold' : '' }}" aria-current="page" href="/scholarships">Scholarships</a>
+          </li>
+          <li class="nav-item px-1 px-xxl-4 px-xl-4 px-lg-4 py-1">
+            <a class="nav-link active {{ $currentPage == 'forums' ? 'text-primary-emphasis fw-semibold' : '' }}" aria-current="page" href="#">Forums</a>
+          </li>
+          <li class="nav-item px-1 px-xxl-4 px-xl-4 px-lg-4 py-1">
+            <a class="nav-link active {{ $currentPage == 'contact' ? 'text-primary-emphasis fw-semibold' : '' }}" aria-current="page" href="#">Contact</a>
+          </li>
+        </ul>
+        <button class="btn mx-2 gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal" data-bs-target="#sign-in-form">Sign In</button>
+      </div>
     </div>
 </nav>

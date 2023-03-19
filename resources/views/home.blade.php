@@ -1,133 +1,113 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eSkolar</title>
+    @include('bootstrap')
+    <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}" />
 </head>
+<body style="background: linear-gradient(0deg, #f1eeec, #F9FAFB, #f4f8fd,  #ffffff);">
 
-<body style="background: linear-gradient(0deg, #EDE9E6, #EDE9E6, #f4f9ff,  #ffffff);"">
+    <x-sign-in-form />
+    <x-sign-up-form />
 
-    <x-login-form />
     <x-header page="home"/>
 
-    <div class="w-screen 2xl:pt-36 xl:pt-24 lg:pt-20 md:pt-20 2xl:h-screen">
-        <div class="flex flex-col lg:flex-row w-screen 2xl:pl-10">
-          <div class="lg:w-1/2 xl:p-20 p-12 pt-20 md: flex items-center justify-center flex-col">
-            <h1 class="2xl:text-7xl text-6xl font-bold text-gray-800">
-              <span>Empowering</span> students to bring them closer to achieving their dreams.
-            </h1>
-            <div class="my-4">
-              <p class="text-lg text-gray-700">
-                Find a suitable scholarship and achieve your academic goals. Browse scholarships, connect with peers, and start your journey to success today.
-              </p>
+    {{-- hero section --}}
+    <div class="container-fluid vh-100 my-xxl-5 my-xl-5 my-lg-5 my-md-5 my-sm-5 my-3">
+        <div class="row vh-100">
+            <div class="col m-auto title-padding">
+                <h1 class="fw-bolder lh-2 title-fs">Empowering students to bring them closer to achieving their dreams.</h1>
+                <p style="font-size: 16px;">Find a suitable scholarship and achieve your academic goals. Browse scholarships, connect with peers, and start your journey to success today.</p>
+                <div class="input-group mt-4">
+                    <input type="text" class="form-control py-3" placeholder="Search scholarship" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-secondary px-4" type="button" id="button-addon2">Search</button>
+                </div>
             </div>
-            <form class="w-full pt-5">   
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-                <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <div class="col m-auto text-center d-xxl-block d-xl-block d-lg-block d-none">
+                <img src="{{ asset('assets/vector.png') }}" width="650" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    {{-- end of hero section --}}
+
+
+    {{-- purpose section --}}
+   <div class="container mb-5">
+        <h1 class="text-center fw-bolder">What's Our Purpose</h1>
+        <p class="text-center pb-5">This tool aims to simplify the scholarship search process for students by providing reliable information and instructions for legitimate scholarships. Additionally, it aims to assist educational institutions in providing accurate information to students seeking financial assistance.</p>
+        <div class="row d-none d-xxl-flex d-xl-flex d-lg-flex d-md-flex">
+            <div class="col d-flex justify-content-center">
+                <div class="card p-card">
+                    <img src="{{ asset('assets/search.png') }}" class="card-img-top p-1 img-fluid m-auto" alt="" style="width: 350px; width: 350px;">
+                    <div class="card-footer p-3" style="background-color: #F9FAFB;">
+                      <h5 class="card-title fw-bold">Find Scholarship</h5>
+                      <p class="card-text">Search for scholarships that best suits for you with ease. Easily gain the information and the process on how to apply.</p>
+                      <a href="#" class="text-decoration-none text-muted">Search scholarship <i class="bi bi-arrow-right"></i></a>
                     </div>
-                    <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-900 bg-white-50 rounded-lg border border-gray-300 focus:ring-white focus:border-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search scholarship" required>
-                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-                </div>
-            </form>
-          </div>
-          <div class="lg:w-1/2 flex items-center justify-center">
-            <img src="{{ asset('assets/vector.png') }}" class="object-cover lg:block hidden xl:w-[700px] xl:h-[700px] lg:w-[500px] lg:h-[500px]" alt="Image">
-          </div>
-        </div>
-    </div>
-      
-    <div class="w-screen pt-16">
-        <h1 class="xl:text-6xl md:text-5xl text-4xl text-center font-bold">What's Our Purpose</h1>
-        <p class="text-center xl:w-[65%] md:w-[85%] sm:w-[85%] w-[85%] pt-4 mx-auto">This tool aims to simplify the scholarship search process for students by providing reliable information and instructions for legitimate scholarships. Additionally, it aims to assist educational institutions in providing accurate information to students seeking financial assistance.</p>
-        <div class="flex flex-wrap justify-center items-center w-full lg:space-x-10 mt-20 lg:px-1 px-10 md:px-0 md:space-y-0 md:space-x-[1%] 2xl:space-y-0 xl:space-y-0 lg:space-y-0 space-y-4 min-w-sm">
-            <div class="2xl:w-[400px] 2xl:h-[500px] lg:w-[300px] lg:h-[400px] md:w-[250px] md:h-[380px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div class="2xl:h-[60%] xl:h-[50%] lg:h-[50%] md:h-[50%] 2x:block xl:block lg:block md:block hidden">
-                  <img class="rounded-t-lg w-full h-full object-cover" src="{{ asset('assets/search.png') }}" alt="" />
-                </div> 
-                <div class="p-5 h-[50%] 2xl:h-[40%]">
-                  <a href="#">
-                    <h5 class="mb-2 text-2xl lg:text-lg font-bold tracking-tight text-black-50 dark:text-white">Find Scholarship</h5>
-                  </a>
-                  <p class="mb-3 text-sm lg:text-base font-normal text-gray-700 dark:text-gray-400">Search for scholarships that best suits for you with ease. Easily gain the information and the process on how to apply.</p>
-                  <a href="#" class="inline-flex items-center text-sm lg:text-base font-medium text-center text-neutral-500">
-                    <i>Search scholarship</i>
-                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
                 </div>
             </div>
-            <div class="2xl:w-[400px] 2xl:h-[500px] lg:w-[300px] lg:h-[400px] md:w-[250px] md:h-[380px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div class="2xl:h-[60%] xl:h-[50%] lg:h-[50%] md:h-[50%] 2x:block xl:block lg:block md:block hidden p-10">
-                  <img class="rounded-t-lg w-full h-full object-cover" src="{{ asset('assets/post.png') }}" alt="" />
-                </div> 
-                <div class="p-5 h-[50%] 2xl:h-[40%]">
-                  <a href="#">
-                    <h5 class="mb-2 text-2xl lg:text-lg font-bold tracking-tight text-black-50 dark:text-white">Share Knowledge</h5>
-                  </a>
-                  <p class="mb-3 text-sm lg:text-base font-normal text-gray-700 dark:text-gray-400">Post scholarship opportunities and other financial assistance that that you know to help other students.</p>
-                  <a href="#" class="inline-flex items-center text-sm lg:text-base font-medium text-center text-neutral-500">
-                    <i>Post scholarship</i>
-                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
+            <div class="col d-flex justify-content-center">
+                <div class="card p-card"">
+                    <img src="{{ asset('assets/post.png') }}" class="card-img-top p-1 img-fluid m-auto" alt="" style="width: 350px; width: 350px;">
+                    <div class="card-footer p-3" style="background-color: #F9FAFB;">
+                      <h5 class="card-title fw-bold">Share Knowledge</h5>
+                      <p class="card-text">Post scholarship opportunities and other financial assistance that you know of to help other students in need.</p>
+                      <a href="#" class="text-decoration-none text-muted">Post scholarship <i class="bi bi-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
-
-            <div class="2xl:w-[400px] 2xl:h-[500px] lg:w-[300px] lg:h-[400px] md:w-[250px] md:h-[380px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div class="2xl:h-[60%] xl:h-[50%] lg:h-[50%] md:h-[50%] 2x:block xl:block lg:block md:block hidden p-10">
-                  <img class="rounded-t-lg w-full h-full object-cover" src="{{ asset('assets/forum.jpg') }}" alt="" />
-                </div> 
-                <div class="p-5 h-[50%] 2xl:h-[40%]">
-                  <a href="#">
-                    <h5 class="mb-2 text-2xl lg:text-lg font-bold tracking-tight text-black-50 dark:text-white">Join Discussions</h5>
-                  </a>
-                  <p class="mb-3 text-sm lg:text-base font-normal text-gray-700 dark:text-gray-400">Ask for assistance or clarrification about particular concerns. Guide other students and discuss related topics.</p>
-                  <a href="#" class="inline-flex items-center text-sm lg:text-base font-medium text-center text-neutral-500">
-                    <i>Join discussions</i>
-                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-                </div>
-              </div>
-              
+            <div class="col d-flex justify-content-center">
+                <div class="card p-card"">
+                    <img src="{{ asset('assets/forum.jpg') }}" class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 380px; width: 380px;">
+                    <div class="card-footer p-3" style="background-color: #F9FAFB;">
+                      <h5 class="card-title fw-bold">Join Discussion</h5>
+                      <p class="card-text">Ask for assistance or clarrification about particular concerns. Guide other students and discuss related topics.</p>
+                      <a href="#" class="text-decoration-none text-muted">Join discussion <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+            </div>
         </div>
-    </div>
+        <div class="row d-flex d-xxl-none d-xl-none d-lg-none d-md-none">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card w-100 mb-3 h-auto p-card"">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Find Scholarship</h5>
+                      <p class="card-text">Search for scholarships that best suits for you with ease. Easily gain the information and the process on how to apply.</p>
+                      <a href="#" class="text-decoration-none text-muted">Search scholarship <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card w-100 mb-3 h-auto p-card">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Share Knowledge</h5>
+                      <p class="card-text">Post scholarship opportunities and other financial assistance that you know of to help other students in need.</p>
+                      <a href="#" class="text-decoration-none text-muted">Post schoalarship <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card w-100 mb-3 h-auto p-card">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Join Discussion</h5>
+                      <p class="card-text">Ask for assistance or clarrification about particular concerns. Guide other students and discuss related topics.</p>
+                      <a href="#" class="text-decoration-none text-muted">Join discussion <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+   {{-- end of purpose section --}}
 
-    <div class="h-screen w-screen">
 
-    </div>
+   <div class="container vh-100">
 
-    <footer class="bg-white shadow w-screen">
-      <div class="w-full container mx-auto p-4 md:px-6 md:py-8 px-6">
-          <div class="sm:flex sm:items-center sm:justify-between">
-              <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
-                  <img src="{{ asset('assets/logo.svg') }}" class="h-6 mr-3 sm:h-9" alt="Logo">
-                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white" style="font-family: 'Fira Sans', sans-serif;">eSkolar</span>
-              </a>
-              <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-                  <li>
-                      <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-                  </li>
-                  <li>
-                      <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-                  </li>
-                  <li>
-                      <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
-                  </li>
-                  <li>
-                      <a href="#" class="hover:underline">Contact</a>
-                  </li>
-              </ul>
-          </div>
-          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© <a href="" class="hover:underline">eSkolar™</a>. All Rights Reserved.</span>
-      </div>
-    </footer>
+   </div>
+
+   <x-footer />
+
 </body>
 </html>

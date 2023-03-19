@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.title-padding {
+    padding: 100px;
+}
+
+.title-fs {
+    font-size: 70px;
+}
+
+.p-card {
+    height: 500px;
+}
+
+.gs-btn {
+    background-color: #F9FAFB;
+    border: 1px solid #DEE2E6;
+    transition: 0.3s;
+}
+
+.gs-btn:hover {
+    background-color: blue;
+    color: white;
+    border: 1px solid #DEE2E6;
+}
+
+.search{
+    position: relative;  
+}
+
+.search input{
+    height: 60px;
+    text-indent: 25px;
+    border: 1px solid #DEE2E6;
+    transition: 0.3s;
+}
+
+
+.search input:focus{
+    box-shadow: none;
+    border: 1px solid #d3d6da;
+    box-shadow: 0 0 20px rgba(51, 51, 51, .1);
+}
+
+.search .bi-search{
+    position: absolute;
+    top: 20px;
+    left: 16px;
+}
+
+.search button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue;
+}
+
+.ui-w-40 {
+    width: 40px !important;
+    height: auto;
+}
+
+@media (max-width: 1400px) {
+    .title-padding {
+        padding-right:  50px;
+        padding-left: 50px;
+    }
+
+    .title-fs {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-padding {
+        padding-right:  50px;
+        padding-left: 50px;
+    }
+
+    .title-fs {
+        font-size: 40px;
+    }
+}
