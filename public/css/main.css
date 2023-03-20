@@ -34,11 +34,11 @@
     border: 1px solid #DEE2E6;
 }
 
-.search{
-    position: relative;  
+.search {
+    position: relative;
 }
 
-.search input{
+.search input {
     height: 60px;
     text-indent: 25px;
     border: 1px solid #D2D2D2;
@@ -46,19 +46,19 @@
 }
 
 
-.search input:focus{
+.search input:focus {
     box-shadow: none;
     border: 1px solid #d3d6da;
     box-shadow: 0 0 20px rgba(51, 51, 51, .1);
 }
 
-.search .bi-search{
+.search .bi-search {
     position: absolute;
     top: 20px;
     left: 16px;
 }
 
-.search button{
+.search button {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -85,7 +85,7 @@
 
 @media (max-width: 1400px) {
     .title-padding {
-        padding-right:  50px;
+        padding-right: 50px;
         padding-left: 50px;
     }
 
@@ -96,7 +96,7 @@
 
 @media (max-width: 576px) {
     .title-padding {
-        padding-right:  50px;
+        padding-right: 50px;
         padding-left: 50px;
     }
 
