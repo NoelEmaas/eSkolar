@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img class="px-2" src="{{ asset('assets/logo.svg') }}" alt="" height="30">
-            <span style="font-family: 'Fira Sans', sans-serif; font-size: 18px;"> eSkolar</span>
+            <span style="font-family: 'Fira Sans', sans-serif; font-size: 18px;">eSkolar</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

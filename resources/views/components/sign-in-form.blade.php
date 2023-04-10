@@ -8,16 +8,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="name@company.com">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="••••••••">
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="••••••••">
                     </div>
                     <div class="mb-3 pt-2 form-check">
                         <div class="d-flex justify-content-between">

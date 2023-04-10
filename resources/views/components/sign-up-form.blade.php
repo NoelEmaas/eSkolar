@@ -7,25 +7,26 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="{{ route('register') }}" method="POST">
+              @csrf
                 <div class="row mb-3">
                     <div class="col">
                       <label for="inputFirstName" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="inputFirstName" placeholder="First name" aria-label="First name">
+                      <input type="text" class="form-control" name="first_name" id="inputFirstName" placeholder="First name" aria-label="First name">
                     </div>
                     <div class="col">
                         <label for="inputLastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="inputLastName" placeholder="First name" aria-label="First name">
+                        <input type="text" class="form-control" name="last_name" id="inputLastName" placeholder="First name" aria-label="First name">
                     </div>
                 </div>
                 <div class="mb-3">
                   <label for="inputEmail" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="name@company.com">
+                  <input type="email" class="form-control" name="email" id="inputEmail" aria-describedby="emailHelp" placeholder="name@company.com">
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                   <label for="inputPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword" placeholder="••••••••">
+                  <input type="password" class="form-control" name="password" id="inputPassword" placeholder="••••••••">
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mt-3">Create account</button>
                 <div class="mt-3">
