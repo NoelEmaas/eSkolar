@@ -34,63 +34,39 @@
     border: 1px solid #DEE2E6;
 }
 
-.search {
-    position: relative;
-}
-
-.search input {
-    height: 60px;
-    text-indent: 10px;
-    border: 1px solid #D2D2D2;
-    transition: 0.3s;
-}
-
-
-.search input:focus {
-    box-shadow: none;
-    border: 1px solid #d3d6da;
-    box-shadow: 0 0 20px rgba(51, 51, 51, .1);
-}
-
-
-.search button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 50px;
-    background: #0D6EFD;
-    color:white;
-    border: none;
-}
-
-.search button:hover {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 50px;
-    background: #0D6EFD;
-    color: white;
-    border: none;
-}
-
 .btn-add-post {
     background-color: white;
     border: 1px solid #D2D2D2;
-    color: black;
+    color: #6C757D;
     padding: 0px 20px;
     display: block;
 }
 
-.btn-add-post-sm {
+.btn-add-post:hover {
+    background-color: #677BD7;
+    border: 1px solid #D2D2D2;
+    color: white;
+    padding: 0px 20px;
+    display: block;
+}
+
+.btn-filter {
     background-color: white;
     border: 1px solid #D2D2D2;
-    color: black;
+    color: #6C757D;
     padding: 0px 20px;
-    align-items: center;
-    display: none;
+    display: block;
 }
+
+.btn-filter:hover {
+    background-color: white;
+    border: 1px solid #677BD7;
+    color: #3b3b3b;
+    padding: 0px 20px;
+    display: block;
+}
+
+
 
 #filter-dropdown {
     position: absolute;
@@ -116,7 +92,6 @@
     max-height: 105px;
 }
 
-
 @media (max-width: 1400px) {
     .title-padding {
         padding-right: 50px;
@@ -139,11 +114,16 @@
     }
 }
 
-@media (max-width: 416px) {
+@media (max-width: 576px) {
     .btn-add-post {
-        display: none;
+        margin-top: 3px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
-    .btn-add-post-sm {
-        display:inline-flex;
+
+    .btn-filter {
+        margin-top: 3px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
