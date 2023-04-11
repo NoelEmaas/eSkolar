@@ -24,3 +24,8 @@ Route::get('/scholarships', function () {
 Route::get('/forums', function () {
     return view('forums');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+

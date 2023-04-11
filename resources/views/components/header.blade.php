@@ -25,7 +25,7 @@
                 </li>
                 <li class="nav-item px-2 px-xxl-4 px-xl-4 px-lg-4 py-1">
                     <a class="nav-link active {{ $currentPage == 'contact' ? 'text-primary-emphasis fw-semibold' : '' }}"
-                        aria-current="page" href="#">Contact</a>
+                        aria-current="page" href="/contact">Contact</a>
                 </li>
             </ul>
             <button class="btn mx-2 gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal"
