@@ -67,7 +67,6 @@
 }
 
 
-
 #filter-dropdown {
     position: absolute;
     top: 5px;
@@ -90,6 +89,26 @@
     text-overflow: ellipsis;
     min-height: 105px;
     max-height: 105px;
+}
+
+.stats{
+    background: #f2f5f8 !important;
+    color: #000 !important;
+}
+
+.articles{
+    font-size:10px;
+    color: #a1aab9;
+}
+
+.followers{
+    font-size:10px;
+    color: #a1aab9;
+}
+
+.rating{
+    font-size:10px;
+    color: #a1aab9;
 }
 
 @media (max-width: 1400px) {
@@ -125,5 +144,13 @@
         margin-top: 3px;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 442px) {
+    .user-info {
+        width: 100%;
+        padding-top: 20px;
+        text-align: center;
     }
 }
