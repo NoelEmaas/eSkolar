@@ -80,12 +80,12 @@
 
     <div class="container mt-4">
         <div class="row">
-            {{-- <x-card-view-full-post /> --}}
+            <x-card-view-full-discussion />
+            {{-- <x-card-discussion />
             <x-card-discussion />
             <x-card-discussion />
             <x-card-discussion />
-            <x-card-discussion />
-            <x-card-discussion />
+            <x-card-discussion /> --}}
         </div>
     </div>
 
