@@ -20,13 +20,14 @@ class CustomAuthController extends Controller
         ]);
     
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
-            $message = 'Signed in!';
-        } else {
-            $message = 'Login details are invalid';
+            \Log::info(json_encode(array('Success' => 'Signed in!')));
+            return redirect()->back()->with('success', 'Signed in!');
         }
-   
-        return redirect('/')->with('message', $message);
+
+        \Log::info(json_encode(array('Error' => 'Login credentials are invalid!')));
+        return redirect()->back()->with('Error', 'Login credentials are invalid!');
     }
 
     public function register(Request $request)
