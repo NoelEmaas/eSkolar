@@ -115,6 +115,11 @@
     background-color: white;
 }
 
+.popover-body {
+  padding: 0;
+}
+
+
 @media (max-width: 1400px) {
     .title-padding {
         padding-right: 50px;
