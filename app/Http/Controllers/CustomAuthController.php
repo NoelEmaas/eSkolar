@@ -20,13 +20,14 @@ class CustomAuthController extends Controller
         ]);
     
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
-            $message = 'Signed in!';
-        } else {
-            $message = 'Login details are invalid';
+            \Log::info(json_encode(array('Success' => 'Signed in!')));
+            return redirect()->back()->with('success', 'Signed in!');
         }
-   
-        return redirect('/')->with('message', $message);
+
+        \Log::info(json_encode(array('Error' => 'Login credentials are invalid!')));
+        return redirect()->back()->with('Error', 'Login credentials are invalid!');
     }
 
     public function register(Request $request)
@@ -41,8 +42,13 @@ class CustomAuthController extends Controller
             
         $data = $request->all();
         $check = $this->create($data);
+
+        // Automatically login after creating user record
+        $credentials = $request->only('email', 'password');
+        Auth::attempt($credentials);
           
-        return redirect('/');
+        \Log::info(json_encode(array('Success' => 'Successfully registered!')));
+        return redirect()->back()->with('Success', 'Successfully registered!');
     }
 
     public function create(array $data)
@@ -59,6 +65,6 @@ class CustomAuthController extends Controller
         Session::flush();
         Auth::logout();
    
-        return redirect('login');
+        return redirect('/');
     }
 }
