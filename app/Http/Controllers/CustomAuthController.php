@@ -42,8 +42,13 @@ class CustomAuthController extends Controller
             
         $data = $request->all();
         $check = $this->create($data);
+
+        // Automatically login after creating user record
+        $credentials = $request->only('email', 'password');
+        Auth::attempt($credentials);
           
-        return redirect('/');
+        \Log::info(json_encode(array('Success' => 'Successfully registered!')));
+        return redirect()->back()->with('Success', 'Successfully registered!');
     }
 
     public function create(array $data)
@@ -60,6 +65,6 @@ class CustomAuthController extends Controller
         Session::flush();
         Auth::logout();
    
-        return redirect('login');
+        return redirect('/');
     }
 }
