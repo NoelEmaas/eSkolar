@@ -39,7 +39,7 @@
                             <div class="row" id="inputAmount">
                                 <div class="input-group col">
                                     <span class="input-group-text">₱</span>
-                                    <input type="number" class="form-control" placeholder="300200">
+                                    <input type="number" class="form-control" placeholder="30000">
                                     <span class="input-group-text">.00</span>
                                 </div>
                                 <div class="col-auto d-flex align-items-center">

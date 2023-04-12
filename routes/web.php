@@ -14,6 +14,11 @@ use App\Http\Controllers\CustomAuthController;
 |
 */
 
+// Authentication routes
+Route::post('login', [CustomAuthController::class, 'login'])->name('login');
+Route::post('register', [CustomAuthController::class, 'register'])->name('register');
+Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
+
 Route::get('/', function () {
     return view('home');
 });
@@ -26,7 +31,12 @@ Route::get('/forums', function () {
     return view('forums');
 });
 
-// Authentication routes
-Route::post('login', [CustomAuthController::class, 'login'])->name('login');
-Route::post('register', [CustomAuthController::class, 'register'])->name('register');
-Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+
