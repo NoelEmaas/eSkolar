@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ScholarshipSeeder::class,
             ForumSeeder::class,
-            CommentSeeder::class
+            CommentSeeder::class,
+            LikeSeeder::class
         ]);
     }
 }
