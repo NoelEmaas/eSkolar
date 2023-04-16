@@ -52,7 +52,16 @@
                         <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-collection me-2"></i> Own Posts</li>
                         <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-chat-square-dots me-2"></i> Own Forums</li>
                         <li class="list-group-item list-group-item-action"><i class="bi bi-star me-2"></i> Starred Posts</li>
-                        <li class="list-group-item list-group-item-action py-3">Sign Out <i class="bi bi-arrow-right ms-5"></i></li>
+                        <li class="list-group-item list-group-item-action py-3">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById("logout-form").submit();">
+                               <i class="bi bi-box-arrow-in-left me-2"></i>
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </ul>
                     '>
                     <i class="bi bi-chevron-down my-auto ms-3"></i>
@@ -85,17 +94,16 @@
                         </div>
                     </div>
                 </div>
-                @else
-                    Hello
-                    <button class="btn mx-2 gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal"
-                        data-bs-target="#sign-in-form">Sign In</button>
                 @endauth
+            @else
+                <button class="btn mx-2 gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal"
+                data-bs-target="#sign-in-form">Sign In</button>
             @endif
         </div>
     </div>
 </nav>
 
-{{-- <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 
 <script>
@@ -103,4 +111,4 @@
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
-</script> --}}
+</script>
