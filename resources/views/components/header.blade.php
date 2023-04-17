@@ -12,19 +12,19 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center w-100"
                 style="font-size: 14px; font-weight: 500;">
                 <li class="nav-item px-2 px-xxl-4 px-xl-4 px-lg-4 py-1">
-                    <a class="nav-link active {{ $currentPage == 'home' ? 'text-primary-emphasis fw-semibold' : '' }} "
+                    <a class="nav-link active {{ request()->is('/') ? 'text-primary-emphasis fw-semibold' : '' }} "
                         aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item px-2 px-xxl-4 px-xl-4 px-lg-4 py-1">
-                    <a class="nav-link active {{ $currentPage == 'scholarships' ? 'text-primary-emphasis fw-semibold' : '' }}"
+                    <a class="nav-link active {{ request()->is('scholarships') ? 'text-primary-emphasis fw-semibold' : '' }}"
                         aria-current="page" href="/scholarships">Scholarships</a>
                 </li>
                 <li class="nav-item px-2 px-xxl-4 px-xl-4 px-lg-4 py-1">
-                    <a class="nav-link active {{ $currentPage == 'forums' ? 'text-primary-emphasis fw-semibold' : '' }}"
+                    <a class="nav-link active {{ request()->is('forums') ? 'text-primary-emphasis fw-semibold' : '' }}"
                         aria-current="page" href="/forums">Forums</a>
                 </li>
                 <li class="nav-item px-2 px-xxl-4 px-xl-4 px-lg-4 py-1">
-                    <a class="nav-link active {{ $currentPage == 'contact' ? 'text-primary-emphasis fw-semibold' : '' }}"
+                    <a class="nav-link active {{ request()->is('contact') ? 'text-primary-emphasis fw-semibold' : '' }}"
                         aria-current="page" href="/contact">Contact</a>
                 </li>
             </ul>

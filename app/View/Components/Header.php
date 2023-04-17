@@ -12,10 +12,9 @@ class Header extends Component
      * @return void
      */
 
-    public $currentPage;
-    public function __construct($page)
+    public function __construct()
     {
-        $this->currentPage = $page;
+        //
     }
 
     /**
