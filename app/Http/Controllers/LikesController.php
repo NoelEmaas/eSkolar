@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ForumLikes;
+use App\Models\Likes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ForumLikesController extends Controller
+class LikesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class ForumLikesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ForumLikes  $forumLikes
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function show(ForumLikes $forumLikes)
+    public function show(Likes $likes)
     {
         //
     }
@@ -53,10 +53,10 @@ class ForumLikesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ForumLikes  $forumLikes
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function edit(ForumLikes $forumLikes)
+    public function edit(Likes $likes)
     {
         //
     }
@@ -65,10 +65,10 @@ class ForumLikesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ForumLikes  $forumLikes
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ForumLikes $forumLikes)
+    public function update(Request $request, Likes $likes)
     {
         //
     }
@@ -76,10 +76,10 @@ class ForumLikesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ForumLikes  $forumLikes
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ForumLikes $forumLikes)
+    public function destroy(Likes $likes)
     {
         //
     }
