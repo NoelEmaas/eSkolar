@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Comment extends Model
+class Like extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'post_id',
-        'comment',
-        'type'
+        'user_id',
+        'type',
+        'post_id'
     ];
 
     public function commentable() {
@@ -23,5 +23,13 @@ class Comment extends Model
 
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
+    }
+
+    public function scholarship(): BelongsTo {
+        return $this->belongsTo(Scholarship::class);
+    }
+
+    public function Forum(): BelongsTo {
+        return $this->belongsTo(Forum::class);
     }
 }

@@ -18,8 +18,11 @@ class CreateScholarshipsTable extends Migration
             $table->string('benefactor');
             $table->string('program');
             $table->string('description');
-            $table->string('amount');
+            $table->float('amount_min');
+            $table->float('amount_max');
             $table->timestamps();
+
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
