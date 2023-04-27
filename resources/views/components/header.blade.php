@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg border border-bottom-2 px-0 px-xxl-5 px-xl-5 px-lg-5 py-3 fixed-top bg-white">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg border border-bottom-1 px-0 px-xxl-5 px-xl-5 px-lg-5 py-3 fixed-top bg-white">
+    <div class="container">
         <a class="navbar-brand" href="#">
-            <img class="px-2" src="{{ asset('assets/logo.svg') }}" alt="" height="30">
+            <img src="{{ asset('assets/logo.svg') }}" alt="" height="30">
             <span style="font-family: 'Fira Sans', sans-serif; font-size: 18px;">eSkolar</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -96,7 +96,7 @@
                 </div>
                 @endauth
             @else
-                <button class="btn mx-2 gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal"
+                <button class="btn gs-btn" type="submit" style="width: 120px; font-size: 14px;" data-bs-toggle="modal"
                 data-bs-target="#sign-in-form">Sign In</button>
             @endif
         </div>

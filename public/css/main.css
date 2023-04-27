@@ -10,16 +10,37 @@
     font-size: 14px;
 }
 
+.hero {
+    background: url("../assets/hero_svg.png") no-repeat;
+    background-position: right top;
+    background-size: contain;
+    background-attachment: fixed;
+    padding-top: 100px;
+    padding-bottom: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fade-effect {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    height: 50px;
+
+}
+
 .title-padding {
     padding: 100px;
 }
 
 .title-fs {
-    font-size: 70px;
+    font-size: 60px;
 }
 
 .p-card {
-    height: 500px;
+    height: auto;
+}
+
+.card-shadow {
+    box-shadow: 0px 10px 15px rgb(219, 219, 219);
 }
 
 .gs-btn {
@@ -127,7 +148,7 @@
     }
 
     .title-fs {
-        font-size: 55px;
+        font-size: 50px;
     }
 }
 
@@ -138,7 +159,18 @@
     }
 
     .title-fs {
-        font-size: 40px;
+        font-size: 50px;
+    }
+
+    .hero-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1200px){
+    .title-fs {
+        font-size: 45px;
     }
 }
 
@@ -153,6 +185,9 @@
         margin-top: 3px;
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .title-fs {
+        font-size: 35px;
     }
 }
 
