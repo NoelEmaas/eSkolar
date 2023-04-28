@@ -81,7 +81,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <div class="card p-card card-shadow">
-                    <img src=" {{ asset('assets/forum.jpg') }}"
+                    <img src=" {{ asset('assets/forum.png') }}"
                     class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 380px;">
                     <div class="card-footer p-3" style="background-color: #fdfdfe;">
                         <h5 class="card-title fw-bold">Join Discussion</h5>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="card swiper-slide">
                         <div class="card-body  d-flex justify-content-center align-items-center" style="height: 200px;">
-                            <img src=" {{ asset('assets/forum.jpg') }}"
+                            <img src=" {{ asset('assets/forum.png') }}"
                             class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 300px;">
                         </div>
     
