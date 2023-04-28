@@ -24,10 +24,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".swiper", {
+            initialSlide: 1,
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2,
+                slideShadows: true,
+            },
             pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            }
+                el: '.swiper-pagination',
+            },
         });
     </script>
 </body>

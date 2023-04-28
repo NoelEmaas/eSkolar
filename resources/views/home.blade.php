@@ -7,7 +7,7 @@
         <div class="position-absolute" style="opacity: 0.1; left: 6%; top: 17%;">
             <svg id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 200px; height: 200px;">
                 <path fill="#3a78ff" d="M452.5,298.5Q443,357,399,397.5Q355,438,297.5,457Q240,476,181.5,459Q123,442,80,399.5Q37,357,19.5,298.5Q2,240,25,184.5Q48,129,85,82.5Q122,36,181,28Q240,20,296.5,32Q353,44,399,83Q445,122,453.5,181Q462,240,452.5,298.5Z" />
-            </svg>
+          </svg>
         </div>
         <div class="position-absolute " style="opacity: 0.1; left: 24%; top: 14%;">
             <svg id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 90px; height: 90px;">
@@ -47,19 +47,16 @@
 </div>
 {{-- end of hero section --}}
 
-<div class="bling">
-</div>
-
 {{-- purpose section --}}
 <div class="container-fluid py-5">
     <div class="container mb-5">
         <h1 class="text-center fw-bolder">What's Our Purpose</h1>
-        <p class="text-center pb-4 px-1">This tool simplifies scholarship searches for students and helps educational institutions provide accurate financial assistance information.</p>
+        <p class="text-center px-1 pb-4">This tool simplifies scholarship searches for students and helps educational institutions provide accurate financial assistance information.</p>
         <div class="row d-none d-xxl-flex d-xl-flex d-lg-flex d-md-flex">
             <div class="col d-flex justify-content-center">
                 <div class="card p-card card-shadow">
                     <img src="{{ asset('assets/search.png') }}"
-                        class="card-img-top p-3 img-fluid m-auto" alt="" style="width: 350px; width: 350px;">
+                        class="card-img-top p-3 img-fluid m-auto" alt="" style="width: 350px;">
                     <div class="card-footer p-3" style="background-color: #fdfdfe;">
                         <h5 class="card-title fw-bold">Find Scholarship</h5>
                         <p class="card-text">Search for scholarships that best suits for you with ease. Easily gain the
@@ -72,7 +69,7 @@
             <div class="col d-flex justify-content-center">
                 <div class="card p-card card-shadow">
                     <img src=" {{ asset('assets/post.png') }}"
-                    class="card-img-top p-1 img-fluid m-auto" alt="" style="width: 350px; width: 350px;">
+                    class="card-img-top p-1 img-fluid m-auto" alt="" style="width: 350px;">
                     <div class="card-footer p-3" style="background-color: #fdfdfe;">
                         <h5 class="card-title fw-bold">Share Knowledge</h5>
                         <p class="card-text">Post scholarship opportunities and other financial assistance that you know
@@ -85,7 +82,7 @@
             <div class="col d-flex justify-content-center">
                 <div class="card p-card card-shadow">
                     <img src=" {{ asset('assets/forum.jpg') }}"
-                    class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 380px; width: 380px;">
+                    class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 380px;">
                     <div class="card-footer p-3" style="background-color: #fdfdfe;">
                         <h5 class="card-title fw-bold">Join Discussion</h5>
                         <p class="card-text">Ask for assistance or clarrification about particular concerns. Guide other
@@ -102,9 +99,9 @@
                     <div class="card swiper-slide">
                         <div class="card-body d-flex justify-content-center align-items-center" style="height: 200px;">
                             <img src="{{ asset('assets/search.png') }}"
-                            class="card-img-top  img-fluid m-auto" alt="" style="width: 240px; width: 240px;">
+                            class="card-img-top  img-fluid m-auto" alt="" style="width: 240px;">
                         </div>
-                        <div class="card-footer p-3 pb-5" style="background-color: #fdfdfe;">
+                        <div class="card-footer p-3" style="background-color: #fdfdfe;">
                             <h5 class="card-title fw-bold">Find Scholarship</h5>
                             <p class="card-text">Search for scholarships that best suits for you with ease. Easily gain the
                                 information and the process on how to apply.</p>
@@ -115,12 +112,12 @@
                     <div class="card swiper-slide">
                         <div class="card-body d-flex justify-content-center align-items-center" style="height: 200px;">
                             <img src=" {{ asset('assets/post.png') }}"
-                            class="card-img-top p-3 img-fluid mx-auto" alt="" style="width: 300px; width: 300px;">
+                            class="card-img-top p-3 img-fluid mx-auto" alt="" style="width: 300px;">
                         </div>
-                        <div class="card-footer p-3 pb-5" style="background-color: #fdfdfe;">
+                        <div class="card-footer p-3" style="background-color: #fdfdfe;">
                             <h5 class="card-title fw-bold">Share Knowledge</h5>
                             <p class="card-text">Post scholarship opportunities and other financial assistance that you know
-                                of to help other students in need.</p>
+                                of to help other students who are in need.</p>
                             <a href="#" class="text-decoration-none text-muted">Post scholarship <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
@@ -128,10 +125,10 @@
                     <div class="card swiper-slide">
                         <div class="card-body  d-flex justify-content-center align-items-center" style="height: 200px;">
                             <img src=" {{ asset('assets/forum.jpg') }}"
-                            class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 300px; width: 300px;">
+                            class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 300px;">
                         </div>
     
-                        <div class="card-footer p-3 pb-5" style="background-color: #fdfdfe;">
+                        <div class="card-footer p-3" style="background-color: #fdfdfe;">
                             <h5 class="card-title fw-bold">Join Discussion</h5>
                             <p class="card-text">Ask for assistance or clarrification about particular concerns. Guide other
                                 students and discuss related topics.</p>
@@ -141,6 +138,7 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
+                {{-- <div class="purpose-container w-100 h-100">asd</div> --}}
             </div>
         </div>
     </div>
@@ -148,21 +146,75 @@
 {{-- end of purpose section --}}
 
 
-<div class="container-fluid">
-    <div class="container">
+<div class="container-fluid mb-4" style="background-color: #f2f7fe;">
+    <div class="container pt-5 pb-3" style="height: auto;">
         <div class="row">
-            <div class="col">
-                {{-- <img src="{{ asset('assets/mobile_view.png') }}"
-                class="card-img-top  img-fluid m-auto" alt="" style="height: 500px; width: 450px;" --}}
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card bg-transparent border border-0">
+                    <img src=" {{ asset('assets/time.gif') }}"
+                    class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
+                    <div class="card-footer bg-transparent border border-0">
+                        <h5 class="card-title fw-bold text-center">Save Time</h5>
+                        <p class="card-text text-center">Find scholarships quickly and easily, and minimize your search time with our comprehensive platform. </p>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card bg-transparent border border-0">
+                    <img src=" {{ asset('assets/update.gif') }}"
+                    class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
+                    <div class="card-footer bg-transparent border border-0">
+                        <h5 class="card-title fw-bold text-center">Be Updated</h5>
+                        <p class="card-text text-center">Stay informed and up-to-date on the latest scholarship opportunities from different institutions. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card bg-transparent border border-0">
+                    <img src=" {{ asset('assets/shield.gif') }}"
+                    class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
+                    <div class="card-footer bg-transparent border border-0">
+                        <h5 class="card-title fw-bold text-center">Legit Information</h5>
+                        <p class="card-text text-center">Trust in our reliable and verified scholarship information with our platform's report system. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="card bg-transparent border border-0">
+                    <img src=" {{ asset('assets/questions.gif') }}"
+                    class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
+                    <div class="card-footer bg-transparent border border-0">
+                        <h5 class="card-title fw-bold text-center">Ask for Help</h5>
+                        <p class="card-text text-center">Get help and support from a community of like-minded students with our forums system. </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container vh-100">
+<div class="container py-5 mb-5 border-bottom">
+    <h1 class="text-center fw-bolder">Accessible In Any Devices</h1>
+    <p class="text-center responsiveness-section">Our scholarship search engine is designed to be fully responsive, ensuring that you can access it from any device, anywhere, and anytime.</p>
+    <div class="d-flex justify-content-center">
+        <img src=" {{ asset('assets/mockup.gif') }}"
+        class="card-img-top pb-4 img-fluid m-auto" alt="..." style="max-width: 800px;">
+    </div>
+</div>
 
+<div class="container mb-5 py-5 ">
+    <div class="row getStarted-section">
+        <div class="col-lg">
+            <p class="fw-bolder">GETTING STARTED</p>
+            <h1 class="fw-bolder gs-fs">Start your eSkolar Journey</h1>
+            <p class="gs-c-fs">Find scholarships that suits for you and start your journey to succes.</p>
+        </div>
+        <div class="col-lg-auto col-md-12 d-flex align-items-center">
+            <div class="my-auto">
+                <button type="button" class="px-4 start-btn me-3" style="padding-top: 10px; padding-bottom: 10px;">Get Started</button>
+                <button type="button" class="px-4 border border-1 fw-medium" style="background-color: white; border-radius: 10px; color: #3F3F46; padding-top: 10px; padding-bottom: 10px;">Explore</button>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
