@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>eSkolar</title>
         @include('bootstrap')
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
         <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}" />
     </head>
@@ -21,6 +22,11 @@
 
     <x-footer/>
 
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".swiper", {

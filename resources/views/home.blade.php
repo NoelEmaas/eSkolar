@@ -53,7 +53,7 @@
         <h1 class="text-center fw-bolder">What's Our Purpose</h1>
         <p class="text-center px-1 pb-4">This tool simplifies scholarship searches for students and helps educational institutions provide accurate financial assistance information.</p>
         <div class="row d-none d-xxl-flex d-xl-flex d-lg-flex d-md-flex">
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center" data-aos="fade-left">
                 <div class="card p-card card-shadow">
                     <img src="{{ asset('assets/search.png') }}"
                         class="card-img-top p-3 img-fluid m-auto" alt="" style="width: 350px;">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center" data-aos="fade-down">
                 <div class="card p-card card-shadow">
                     <img src=" {{ asset('assets/post.png') }}"
                     class="card-img-top p-1 img-fluid m-auto" alt="" style="width: 350px;">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center" data-aos="fade-right">
                 <div class="card p-card card-shadow">
                     <img src=" {{ asset('assets/forum.png') }}"
                     class="card-img-top p-1 img-fluid m-auto" alt="..." style="width: 380px;">
@@ -149,7 +149,7 @@
 <div class="container-fluid mb-4" style="background-color: #f2f7fe;">
     <div class="container pt-5 pb-3" style="height: auto;">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-left">
                 <div class="card bg-transparent border border-0">
                     <img src=" {{ asset('assets/time.gif') }}"
                     class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-left" data-aos-delay="50">
                 <div class="card bg-transparent border border-0">
                     <img src=" {{ asset('assets/update.gif') }}"
                     class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
@@ -169,7 +169,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-left" data-aos-delay="100">
                 <div class="card bg-transparent border border-0">
                     <img src=" {{ asset('assets/shield.gif') }}"
                     class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
@@ -179,7 +179,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-left" data-aos-delay="150">
                 <div class="card bg-transparent border border-0">
                     <img src=" {{ asset('assets/questions.gif') }}"
                     class="card-img-top pb-4 img-fluid m-auto" alt="..." style="width: 80px;">
@@ -194,22 +194,24 @@
 </div>
 
 <div class="container py-5 mb-5 border-bottom">
-    <h1 class="text-center fw-bolder">Accessible In Any Devices</h1>
-    <p class="text-center responsiveness-section">Our scholarship search engine is designed to be fully responsive, ensuring that you can access it from any device, anywhere, and anytime.</p>
-    <div class="d-flex justify-content-center">
+    <div data-aos="fade-up">
+        <h1 class="text-center fw-bolder">Accessible In Any Devices</h1>
+        <p class="text-center responsiveness-section">Our scholarship search engine is designed to be fully responsive, ensuring that you can access it from any device, anywhere, and anytime.</p>
+    </div>
+    <div class="d-flex justify-content-center" data-aos="fade-up">
         <img src=" {{ asset('assets/mockup.gif') }}"
         class="card-img-top pb-4 img-fluid m-auto" alt="..." style="max-width: 800px;">
     </div>
 </div>
 
 <div class="container mb-5 py-5 ">
-    <div class="row getStarted-section">
+    <div class="row getStarted-section" data-aos="fade-right">
         <div class="col-lg">
             <p class="fw-bolder">GETTING STARTED</p>
             <h1 class="fw-bolder gs-fs">Start your eSkolar Journey</h1>
             <p class="gs-c-fs">Find scholarships that suits for you and start your journey to succes.</p>
         </div>
-        <div class="col-lg-auto col-md-12 d-flex align-items-center">
+        <div class="col-lg-auto col-md-12 d-flex align-items-center" data-aos="fade-left">
             <div class="my-auto">
                 <button type="button" class="px-4 start-btn me-3" style="padding-top: 10px; padding-bottom: 10px;">Get Started</button>
                 <button type="button" class="px-4 border border-1 fw-medium" style="background-color: white; border-radius: 10px; color: #3F3F46; padding-top: 10px; padding-bottom: 10px;">Explore</button>
