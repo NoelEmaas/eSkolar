@@ -16,7 +16,7 @@ class CreateForumsTable extends Migration
         Schema::create('forums', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->mediumText('description');
             $table->timestamps();
 
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
