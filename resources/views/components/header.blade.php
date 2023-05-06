@@ -31,7 +31,7 @@
             <hr class="d-xxl-none d-xl-none d-lg-none d-block mx-1">
             @if(Auth::check())
                 @auth
-                <div class= "d-xxl-flex d-xl-flex d-lg-flex d-none">
+                <div class= "d-xxl-flex d-xl-flex d-lg-flex d-none rounded-circle" style="border: 1px solid #acacac; padding: 1px;">
                     <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
                     class="rounded-circle" alt="" width="35" height="35" role="button" data-bs-html="true"
                     data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom"
@@ -48,7 +48,7 @@
                     data-bs-content=
                     ' 
                     <ul class="list-group list-group-flush rounded">
-                        <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-person me-1 fs-5"></i> Your Profile</li>
+                        <a href="/profile"><li class="list-group-item list-group-item-action border border-0"><i class="bi bi-person me-1 fs-5"></i> Your Profile</li></a>
                         <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-collection me-2"></i> Own Posts</li>
                         <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-chat-square-dots me-2"></i> Own Forums</li>
                         <li class="list-group-item list-group-item-action"><i class="bi bi-star me-2"></i> Starred Posts</li>
@@ -64,8 +64,8 @@
                         </form>
                     </ul>
                     '>
-                    <i class="bi bi-chevron-down my-auto ms-3"></i>
                 </div>
+
                 <div class="d-xxl-none d-xl-none d-lg-none d-block bg-light px-3 py-3 mx-1 rounded">
                     <div class="d-flex justify-content-between" role="button" data-bs-toggle="collapse" data-bs-target="#user-options" aria-controls="user-options">
                         <div class="d-flex">

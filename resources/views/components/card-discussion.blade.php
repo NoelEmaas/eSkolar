@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-    <div class="card">
-        <div class="card-header py-3 bg-white">
+    <div class="card border border-0" style="box-shadow: 0px 0px 5px rgb(203, 209, 214);">
+        <div class="card-header py-3 bg-white" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div class="container">
                     <div class="row">
@@ -21,8 +21,10 @@
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @if(request()->is('profile'))
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -35,7 +37,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis felis erat. Donec tortor erat, porta sed pretium vel, ultricies sit amet eros. Sed nec nisl id dolor placerat congue at et felis. Sed semper gravida lorem eget fringilla.</p>
             </div>
         </div>
-        <div class="card-footer bg-white px-4 py-3 justify-content-center">
+        <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div>
                     <i class="bi bi-star" style="cursor: pointer"></i>

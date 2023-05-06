@@ -35,7 +35,8 @@
                 <div class="input-group mt-4">
                     <input type="text" class="form-control py-3" placeholder="Search scholarship"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-primary px-4" type="button" id="button-addon2">Search</button>
+                    
+                    {{-- <button class="btn btn-primary px-4" type="button" id="button-addon2">Search</button> --}}
                 </div>
             </div>
             <div class="col m-auto text-center d-xxl-block d-xl-block d-lg-block d-none">
