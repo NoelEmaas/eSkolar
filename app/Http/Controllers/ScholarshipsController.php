@@ -70,7 +70,15 @@ class ScholarshipsController extends Controller
      */
     public function update(Request $request, Scholarships $scholarships)
     {
-        //
+        $scholarships->update([
+            "benefactor" => request->benefactor,
+            "program" => request->program,
+            "description" => request->description,
+            "amount_min" => request->amount_min,
+            "amount_max" => request->amount_max
+        ]);
+
+        
     }
 
     /**
@@ -81,6 +89,7 @@ class ScholarshipsController extends Controller
      */
     public function destroy(Scholarships $scholarships)
     {
-        //
+        $scholarships->delete();
+        return response()->json(Scholarships::all());
     }
 }

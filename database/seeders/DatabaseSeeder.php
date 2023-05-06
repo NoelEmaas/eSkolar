@@ -16,10 +16,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             UserSeeder::class,
-            ScholarshipSeeder::class,
-            ForumSeeder::class,
-            CommentSeeder::class,
-            LikeSeeder::class
+            // ScholarshipSeeder::class, ForumSeeder::class,
+            // CommentSeeder::class,
+            // LikeSeeder::class
         ]);
     }
 }

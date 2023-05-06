@@ -39,7 +39,7 @@ class User extends Authenticatable
         return $this->hasMany(Forum::class);
     }
 
-    public function commments(): HasMany {
+    public function comments(): HasMany {
         return $this->hasMany(Comment::class);
     }
 

@@ -17,7 +17,7 @@ class CreateScholarshipsTable extends Migration
             $table->id();
             $table->string('benefactor');
             $table->string('program');
-            $table->string('description');
+            $table->mediumText('description');
             $table->float('amount_min');
             $table->float('amount_max');
             $table->timestamps();
