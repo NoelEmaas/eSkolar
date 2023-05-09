@@ -59,6 +59,7 @@
     </div>
 </div>
 
+
 <script>
     const initalCheckedInput = document.querySelector('input:checked');
     const initialCheckedLabel = initalCheckedInput.nextElementSibling;
