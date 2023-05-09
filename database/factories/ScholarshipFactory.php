@@ -19,6 +19,7 @@ class ScholarshipFactory extends Factory
     {
         $min = $this->faker->randomFloat(6, 20000, 1000000);
         $max= $this->faker->randomFloat(6, 20000, 1000000);
+        $name = $this->faker->name();
 
         if ($min > $max) {
             $tmp = $min;
@@ -27,8 +28,8 @@ class ScholarshipFactory extends Factory
         }
 
         return [
-            'benefactor' => $this->faker->name(),
-            'program' => $this->faker->name()."'s scholarship program",
+            'benefactor' => $name,
+            'program' => $name."'s scholarship program",
             'description' => $this->faker->text(500),
             'amount_min' => $min,
             'amount_max' => $max,

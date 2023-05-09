@@ -17,8 +17,8 @@
                                 </div>
                                 <div class="col-auto">
                                     <div class="media-body m-auto pt-1">
-                                        Kenneth Frazier
-                                        <div class="text-muted small">Ched Scholar</div>
+                                        {{ $authorName }} 
+                                        <!-- <div class="text-muted small">Ched Scholar</div> -->
                                     </div>
                                 </div>
                             </div>
@@ -27,22 +27,22 @@
                             <div class="py-2 px-3 bg-primary d-flex justify-content-between rounded text-white stats">
                                 <div class="d-flex flex-column">
                                     <span class="articles">Posts</span>
-                                    <span class="number1">4</span>
+                                    <span class="number1">{{ $author_scholarship_count }}</span>
                                 </div>
                                 <div class="d-flex flex-column">
                                     <span class="followers">Forums</span>
-                                    <span class="number2">6</span>     
+                                    <span class="number2">{{ $author_forum_count }}</span>     
                                 </div>
                                 <div class="d-flex flex-column">
                                     <span class="rating">Stars</span>
-                                    <span class="number3">12</span>
+                                    <span class="number3">{{ $author_like_count }}</span>
                                 </div>
                             </div>
                             '>
                         </div>
                         <div class="col-auto">
                             <div class="media-body ml-3">
-                                Kenneth Frazier
+                                {{ $authorName }} 
                                 <div class="text-muted small">3 days ago</div>
                             </div>
                         </div>
@@ -61,23 +61,21 @@
         </div>
         <div class="card-body p-4">
             <div class="title mb-3">
-                <h5 class="card-title">CHED</h5>
-                <p class="card-text text-muted">CHED Scholarship Program 2020-2021</p>
+                <h5 class="card-title">{{ $benefactor }}</h5>
+                <p class="card-text text-muted">{{ $program }}</p>
             </div>
-            <p class="amount mb-3">Amount: Php 80,000 - Php 120,000</p>
+            <p class="amount mb-3">Amount: Php {{ $amount_min }} - Php {{ $amount_max }} </p>
             <div class="post-content">
-                <p>For qualified and deserving students entering first year of Tertiary Education whose General Weighted
-                    Average (GWA) is at least 96% or its equivalent (For Full Merit Program) and 93%-95% or its
-                    equivalent for Half Merit Program. </p>
+                <p>{{ $description }}</p>
             </div>
         </div>
         <div class="card-footer bg-white px-4 py-3 justify-content-center">
             <div class="d-flex justify-content-between">
                 <div>
                     <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2">13</span>
+                    <span class="px-2">{{ $like_count }}</span>
                 </div>
-                <span style="cursor: pointer">13 comments</span>
+                <span style="cursor: pointer">{{ $comment_count }} comments</span>
             </div>
         </div>
     </div>

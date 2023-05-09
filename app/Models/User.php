@@ -42,8 +42,26 @@ class User extends Authenticatable
     public function comments(): HasMany {
         return $this->hasMany(Comment::class);
     }
-
+    
     public function likes(): HasMany {
         return $this->hasMany(Like::class);
+    }
+
+    public function getScholarshipCountAttribute() {
+        return count($this->scholarships);
+    }
+    public function getForumCountAttribute() {
+        return count($this->forums);
+    }
+
+    public function getLikeCountAttribute() {
+        $like_count = 0;
+        foreach ($this->scholarships as $scholarship) 
+            $like_count += $scholarship->like_count;
+
+        foreach ($this->forums as $forum) 
+            $like_count += $forum->like_count;
+
+        return $like_count;
     }
 }

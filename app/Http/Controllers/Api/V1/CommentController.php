@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Likes;
+use App\Models\Comments;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LikesController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class LikesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Likes  $likes
+     * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function show(Likes $likes)
+    public function show(Comments $comments)
     {
         //
     }
@@ -53,10 +53,10 @@ class LikesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Likes  $likes
+     * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function edit(Likes $likes)
+    public function edit(Comments $comments)
     {
         //
     }
@@ -65,10 +65,10 @@ class LikesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Likes  $likes
+     * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Likes $likes)
+    public function update(Request $request, Comments $comments)
     {
         //
     }
@@ -76,10 +76,10 @@ class LikesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Likes  $likes
+     * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Likes $likes)
+    public function destroy(Comments $comments)
     {
         //
     }

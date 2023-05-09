@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Scholarships;
+use App\Models\Likes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ScholarshipsController extends Controller
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ScholarshipsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -42,10 +42,10 @@ class ScholarshipsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Scholarships  $scholarships
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function show(Scholarships $scholarships)
+    public function show(Likes $likes)
     {
         //
     }
@@ -53,10 +53,10 @@ class ScholarshipsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Scholarships  $scholarships
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Scholarships $scholarships)
+    public function edit(Likes $likes)
     {
         //
     }
@@ -65,31 +65,22 @@ class ScholarshipsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Scholarships  $scholarships
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Scholarships $scholarships)
+    public function update(Request $request, Likes $likes)
     {
-        $scholarships->update([
-            "benefactor" => request->benefactor,
-            "program" => request->program,
-            "description" => request->description,
-            "amount_min" => request->amount_min,
-            "amount_max" => request->amount_max
-        ]);
-
-        
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Scholarships  $scholarships
+     * @param  \App\Models\Likes  $likes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Scholarships $scholarships)
+    public function destroy(Likes $likes)
     {
-        $scholarships->delete();
-        return response()->json(Scholarships::all());
+        //
     }
 }

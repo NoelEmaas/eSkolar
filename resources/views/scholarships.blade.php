@@ -3,6 +3,8 @@
 @section('content')
 <div class="modal fade" id="createPostModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <!-- Create Scholarship Modal -->
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header py-2 px-5 d-flex justify-content-start align-items-center" style="background-color: #677BD7;">
@@ -10,22 +12,24 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-2 pb-4">
-                <form>
+                <!-- Create Scholarship Form  -->
+                <form route="{{ route('addScholarship') }}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="inputBenefactor" class="form-label">Benefactor</label>
-                        <input type="text" class="form-control" id="inputBenefactor" aria-describedby="emailHelp"
+                        <input type="text" class="form-control" name="benefactor" id="inputBenefactor" aria-describedby="emailHelp"
                             placeholder="CHED">
                     </div>
                     <div class="mb-3">
                         <label for="inputProgram" class="form-label">Scholarship Program</label>
-                        <input type="text" class="form-control" id="inputProgram" placeholder="Ched Scholarship Program 2021">
+                        <input type="text" class="form-control" name="program" id="inputProgram" placeholder="Ched Scholarship Program 2021">
                     </div>
                     <div class="mb-3">
                         <label for="inputAmount" class="form-label">Amount Of Assistance</label>
                         <div class="row" id="inputAmount">
                             <div class="input-group col">
                                 <span class="input-group-text">₱</span>
-                                <input type="number" class="form-control" placeholder="30000">
+                                <input type="number" class="form-control" name="amount_min" placeholder="30000">
                                 <span class="input-group-text">.00</span>
                             </div>
                             <div class="col-auto d-flex align-items-center">
@@ -33,25 +37,28 @@
                             </div>
                             <div class="input-group col">
                                 <span class="input-group-text">₱</span>
-                                <input type="number" class="form-control" placeholder="60000">
+                                <input type="number" class="form-control" name="amount_max" placeholder="60000">
                                 <span class="input-group-text">.00</span>
                             </div>
                         </div>
                     </div>
                     <div class="mb-5">
                         <label for="inputScholarshipInfo" class="form-label">Scholarship Information</label>
-                        <textarea class="form-control" id="inputScholarshipInfo" placeholder="..." style="height: 200px"></textarea>
+                        <textarea class="form-control" name="description" id="inputScholarshipInfo" placeholder="..." style="height: 200px"></textarea>
                     </div>
                     <div class="d-flex justify-content-end mt-4">
                         <button class="btn me-5">Discard</button>
                         <button class="btn px-4 py-2" style="background-color: #677BD7; color: white;">Post Scholarship</button>
                     </div>
                 </form>
+                <!-- End of Create Scholarship Form -->
             </div>
         </div>
     </div>
 </div>
+<!-- End of Create Scholarship Modal -->
 
+<!-- Search Bar & Filter -->
 <div class="containter-fluid border border-bottom-1 pt-5 pb-4" style="height: auto; background-color: #FBFDFF">
     <div class="container">
         <div class="row g-3 mt-5 pt-4 mb-4">
@@ -81,17 +88,16 @@
         </div>
     </div>
 </div>
+<!-- End of Search Bar & Filter -->
 
-
+<!-- Scholarship cards -->
 <div class="container mt-4">
     <div class="row">
         {{-- <x-card-view-full-post /> --}}
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
+        @foreach ($scholarships as $scholarship)
+            <x-card-post :scholarship=$scholarship />
+        @endforeach
     </div>
 </div>
+<!-- End of Scholarship cards -->
 @endsection
