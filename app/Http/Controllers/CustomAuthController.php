@@ -27,7 +27,7 @@ class CustomAuthController extends Controller
         }
 
         \Log::info(json_encode(array('Error' => 'Login credentials are invalid!')));
-        return redirect()->back()->with('Error', 'Login credentials are invalid!');
+        return redirect()->back()->withErrors(['login' => 'Incorrect email address or password']);
     }
 
     public function register(Request $request)
