@@ -1,8 +1,8 @@
 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-    <div class="card">
-        <div class="card-header py-3 bg-white">
+    <div class="card border-0" style="box-shadow: 0px 0px 5px rgb(203, 209, 214);">
+        <div class="card-header py-3 bg-white" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
-                <div class="container">
+                <div class="container py-2">
                     <div class="row">
                         <div class="col-auto">
                             <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
@@ -43,39 +43,46 @@
                         <div class="col-auto">
                             <div class="media-body ml-3">
                                 {{ $authorName }} 
-                                <div class="text-muted small">3 days ago</div>
+                                <div class="text-muted small" style="font-size: 12px">3 days ago</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown-center py-2">
                     <i class="bi bi-three-dots-vertical fs-3 text-muted " style="cursor: pointer"
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @if(request()->is('profile'))
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
         </div>
         <div class="card-body p-4">
             <div class="title mb-3">
-                <h5 class="card-title">{{ $benefactor }}</h5>
-                <p class="card-text text-muted">{{ $program }}</p>
+                <h5 class="card-title fw-bold" style="font-size: 16px">{{ $benefactor }}</h5>
+                <p class="card-text text-muted fw-bold">{{ $program }}</p>
             </div>
             <p class="amount mb-3">Amount: Php {{ $amount_min }} - Php {{ $amount_max }} </p>
             <div class="post-content">
                 <p>{{ $description }}</p>
             </div>
         </div>
-        <div class="card-footer bg-white px-4 py-3 justify-content-center">
+        <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div>
                     <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2">{{ $like_count }}</span>
+                    <span class="px-2">{{ $like_count }} Stars</span>
                 </div>
-                <span style="cursor: pointer">{{ $comment_count }} comments</span>
+                <div class="d-flex justiy-content-center align-items-center">
+                    <a href="#" class="text-decoration-none" style="color: black;">
+                        <i class="bi bi-chat-left "></i>
+                        <span class="px-2" style="cursor: pointer">{{ $comment_count }} comments</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
