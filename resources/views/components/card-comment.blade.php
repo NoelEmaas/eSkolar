@@ -4,10 +4,11 @@
     <div>
         <div class="d-flex justify-content-between">
             <div>
-                <h6 class="fw-bold mb-1">Maggie Marsh</h6>
+                <h6 class="fw-bold mb-1">{{ $authorName }}</h6>
                 <div class="d-flex align-items-center mb-3">
                     <p class="mb-0 small text-muted">
-                        March 07, 2021
+                        <!-- March 07, 2021 -->
+                        {{ $created_at }}
                     </p>
                     <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
                     <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
@@ -27,10 +28,7 @@
 
         </div>
         <p class="mb-0">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text ever
-            since the 1500s, when an unknown printer took a galley of type and
-            scrambled it.
+            {{ $comment }}
         </p>
     </div>
 </div>

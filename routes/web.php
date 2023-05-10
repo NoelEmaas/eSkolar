@@ -43,7 +43,8 @@ Route::post('register', [CustomAuthController::class, 'register'])->name('regist
 Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 // Scholarship routes
-Route::get('scholarships', [ScholarshipController::class, 'index'])->name('getScholarships');
+route::get('scholarships', [scholarshipcontroller::class, 'index'])->name('getScholarships');
+route::get('scholarships/{scholarship_id}', [scholarshipcontroller::class, 'show'])->name('getScholarship');
 Route::post('scholarships', [ScholarshipController::class, 'store'])->middleware('auth')->name('addScholarship');
 Route::put('scholarships', [ScholarshipController::class, 'update'])->middleware('auth')->name('updateScholarship');
 Route::delete('scholarships', [ScholarshipController::class, 'destroy'])->middleware('auth')->name('deleteScholarship');

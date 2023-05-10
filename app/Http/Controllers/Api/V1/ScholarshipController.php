@@ -60,9 +60,10 @@ class ScholarshipController extends Controller
      * @param  \App\Models\Scholarships  $scholarships
      * @return \Illuminate\Http\Response
      */
-    public function show(Scholarship $scholarship)
+    public function show(string $scholarship_id)
     {
-        return new ScholarshipResource($scholarship);
+        \Log::info(json_encode(new ScholarshipResource(Scholarship::find($scholarship_id))));
+        return view('viewScholarship', ['scholarship' => new ScholarshipResource(Scholarship::find($scholarship_id))]);
     }
 
     /**

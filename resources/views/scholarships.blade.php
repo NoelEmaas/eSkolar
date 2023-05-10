@@ -11,10 +11,11 @@
                 <p class="fs-5 fw-bold text-light pt-3">Help other students</p>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-2 pb-4">
-                <!-- Create Scholarship Form  -->
-                <form route="{{ route('addScholarship') }}" method="POST">
-                    @csrf
+
+            <!-- Create Scholarship Form  -->
+            <form route="{{ route('addScholarship') }}" method="POST">
+                @csrf
+                <div class="modal-body px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-2 pb-4">
                     <div class="mb-3">
                         <label for="inputBenefactor" class="form-label">Benefactor</label>
                         <input type="text" class="form-control" name="benefactor" id="inputBenefactor" aria-describedby="emailHelp"
@@ -46,16 +47,15 @@
                         <label for="inputScholarshipInfo" class="form-label">Scholarship Information</label>
                         <textarea class="form-control" name="description" id="inputScholarshipInfo" placeholder="..." style="height: 200px"></textarea>
                     </div>
-
-                </form>
-                <!-- End of Create Scholarship Form -->
-            </div>
-            <div class="modal-footer px-4 py-3">
-                <div class="d-flex justify-content-end">
-                    <button class="btn me-5">Discard</button>
-                    <button class="btn px-4 py-2" style="background-color: #677BD7; color: white;">Post Scholarship</button>
                 </div>
-            </div>
+                <div class="modal-footer px-4 py-3">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn me-5">Discard</button>
+                        <button class="btn px-4 py-2" style="background-color: #677BD7; color: white;">Post Scholarship</button>
+                    </div>
+                </div>
+            </form>
+            <!-- End of Create Scholarship Form -->
         </div>
     </div>
 </div>
@@ -84,7 +84,9 @@
     <div class="row">
         {{-- <x-card-view-full-post /> --}}
         @foreach ($scholarships as $scholarship)
-            <x-card-post :scholarship=$scholarship />
+            <a href="{{ route('getScholarship', ['scholarship_id' => $scholarship->id]) }}">
+                <x-card-post :scholarship=$scholarship />
+            </a>
         @endforeach
     </div>
 </div>
