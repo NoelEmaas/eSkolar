@@ -20,7 +20,6 @@
                 data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Report</a></li>
-                  <li><a class="dropdown-item" href="#">Reply</a></li>
                   @if(Auth::check() && Auth::user()->id == $authorId)
                   <li>
                     <form class="dropdown-item" action="{{ route('delete.comment') }}" method="POST">

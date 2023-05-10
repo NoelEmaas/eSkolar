@@ -1,5 +1,5 @@
 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-    <div class="card border-0" style="box-shadow: 0px 0px 5px rgb(203, 209, 214);">
+    <div class="card border-0" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
         <div class="card-header py-3 bg-white" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div class="container py-2">
@@ -61,27 +61,29 @@
                 </div>
             </div>
         </div>
-        <div class="card-body p-4">
-            <div class="title mb-3">
-                <h5 class="card-title fw-bold" style="font-size: 16px">{{ $benefactor }}</h5>
-                <p class="card-text text-muted fw-bold">{{ $program }}</p>
-            </div>
-            <p class="amount mb-3">Amount: Php {{ $amount_min }} - Php {{ $amount_max }} </p>
-            <div class="post-content">
-                <p>{{ $description }}</p>
-            </div>
+        <div class="card-body p-4 link-body">
+            <a href="{{ route('getScholarship', ['scholarship_id' => $id]) }}" style="color: inherit;">
+                <div class="title mb-3">
+                    <p class="card-title fw-bold" style="font-size: 16px;">{{ $benefactor }}</p>
+                    <p class="card-text fw-bold scholarship-program">{{ $program }}</p>
+                </div>
+                <p class="amount mb-3">Amount: Php {{ $amount_min }} - Php {{ $amount_max }}</p>
+                <div class="post-content">
+                    <p>{{ $description }}</p>
+                </div>
+            </a>
         </div>
+
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
-                <div>
+                <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
                     <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
-                    <span class="px-2" id="{{ $id }}_card_post_star_count">{{ $like_count }}</span>
-                    <!-- <span class="px-2">stars</span> -->
+                    <span class="ps-2 fw-bold" id="{{ $id }}_card_post_star_count">{{ $like_count }} stars</span>
                 </div>
-                <div class="d-flex justiy-content-center align-items-center">
-                    <a href="#" class="text-decoration-none" style="color: black;">
+                <div class="d-flex justiy-content-center align-items-center px-3 py-2 rounded" style="background-color: #e6f8f0;">
+                    <a href="#" class="text-decoration-none fw-bold" style="color: #008f53; font-size: 10px;">
                         <i class="bi bi-chat-left "></i>
-                        <span class="px-2" style="cursor: pointer">{{ $comment_count }} comments</span>
+                        <span class="ps-2" style="cursor: pointer">{{ $comment_count }} comments</span>
                     </a>
                 </div>
             </div>

@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
 
@@ -68,7 +68,7 @@ a {
 }
 
 .btn-add-post:hover {
-    background-color: #677BD7;
+    background-color: #1A56DB;
     border: 1px solid #D2D2D2;
     color: white;
     padding: 0px 20px;
@@ -85,7 +85,7 @@ a {
 
 .btn-filter:hover {
     background-color: white;
-    border: 1px solid #677BD7;
+    border: 1px solid #1A56DB;
     color: #3b3b3b;
     padding: 0px 20px;
     display: block;
@@ -205,6 +205,32 @@ a {
 .btn-border {
     border-width: 0 1px 0 0 !important;
     border-color: #DEE2E6 !important;
+}
+
+.link-body:hover {
+    background-color: #f8faff;
+}
+
+.scholarship-program {
+    color: #1A56DB;
+}
+
+.link-body:hover .scholarship-program {
+    color: #1A56DB;
+    text-decoration: underline;
+}
+
+.link-body:hover .forum-title {
+    color: #1A56DB;
+    text-decoration: underline;
+}
+
+.clr-blue {
+    color: #1A56DB !important;
+}
+
+.bg-blue {
+    background-color: #1A56DB !important;
 }
 
 @media (max-width: 1400px) {

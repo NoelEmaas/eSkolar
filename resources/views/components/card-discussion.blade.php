@@ -29,22 +29,25 @@
                 </div>
             </div>
         </div>
-        <div class="card-body p-4">
-            <div class="title mb-3">
-                <p class="fw-bolder" style="font-size: 16px;">{{ $title }}</p>
-            </div>
-            <div class="post-content">
-                <p>{{ $description }}</p>
-            </div>
+        <div class="card-body p-4 link-body">
+            <a href="{{ route('getForum', ['forum_id' => $id]) }}" style="color: inherit;">
+                <div class="title mb-3">
+                    <p class="fw-bolder forum-title" style="font-size: 16px;">{{ $title }}</p>
+                </div>
+                <div class="post-content">
+                    <p>{{ $description }}</p>
+                </div>
+            </a>
         </div>
+
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
-                <div class="d-flex justiy-content-center align-items-center">
+                <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
                     <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2">{{ $likeCount }}</span>
+                    <span class="px-2 fw-bold">{{ $likeCount }} stars</span>
                 </div>
-                <div class="d-flex justiy-content-center align-items-center">
-                    <a href="#" class="text-decoration-none" style="color: black;">
+                <div class="d-flex justiy-content-center align-items-center px-3 py-2 rounded" style="background-color: #e6f8f0;">
+                    <a href="#" class="text-decoration-none fw-bold" style="color: #008f53; font-size: 10px;">
                         <i class="bi bi-chat-left "></i>
                         <span class="px-2" style="cursor: pointer">{{ $commentCount }} comments</span>
                     </a>
