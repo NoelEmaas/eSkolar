@@ -12,19 +12,19 @@
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="email" class="form-control @error('login') is-invalid @enderror" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
                             placeholder="name@company.com">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="exampleInputPassword1" placeholder="••••••••">
-                        @error('login')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        <input type="password" class="form-control @error('login') is-invalid @enderror" name="password" id="exampleInputPassword1" placeholder="••••••••">
                     </div>
+                    @error('login')
+                        <span class="text-danger pb-2" style="font-size: 12px;" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     <div class="mb-3 pt-2 form-check">
                         <div class="d-flex justify-content-between">
                             <div>
@@ -44,3 +44,20 @@
         </div>
     </div>
 </div>
+
+
+@section('scripts')
+@parent
+
+@if($errors->has('login'))
+    <script>
+        console.log("hello");
+        window.onload = function () {
+            OpenBootstrapPopup();
+        };
+        function OpenBootstrapPopup() {
+            $("#sign-in-form").modal('show');
+        }
+    </script>
+@endif
+@endsection
