@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="container-fluid d-flex justify-content-center align-items-center mt-5 pt-md-3 pt-0">
     <div class="container mt-5 d-flex justify-content-center py-4 position-relative" style="box-shadow: 0px 0px 5px rgb(203, 209, 214); border-radius: 10px;">
         <div class="row m-auto">
@@ -50,12 +48,9 @@
 <div class="container mt-4">
     <div class="row">
         {{-- <x-card-view-full-post /> --}}
+        @fo
         <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
-        <x-card-post />
+        @
     </div>
 </div>
 

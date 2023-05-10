@@ -4,6 +4,8 @@ namespace App\Http\Resources\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+use DateTime;
+
 class ForumResource extends JsonResource
 {
     /**
@@ -14,13 +16,17 @@ class ForumResource extends JsonResource
      */
     public function toArray($request)
     {
+        $createdAt = new DateTime($this->created_at);
+        $formattedDate = $createdAt->format('M j, Y');
+
         return [
             'id' => $this->id,
-            'authorName' => $this->author_name,
+            'user' => $this->user,
             'title' => $this->title,
             'description' => $this->description,
             'commentCount' => $this->comment_count,
-            'likeCount' => $this->like_count
+            'likeCount' => $this->like_count,
+            'created_at' => $formattedDate
         ];
     }
 }

@@ -2,85 +2,37 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\Likes;
+use App\Models\Like;
+use App\Models\Scholarship;
+use App\Models\Forum;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function addLike(Request $request)
     {
+        $like = Like::create([
+            'user_id' => Auth::id(),
+            'likeable_id' => $request->id,  
+            'likeable_type' => ($type == 'scholarship') ? Scholarship::class : Forum::class
+        ]);
 
+        return response()->json([
+            'status' => 200,
+            'message' => 'Added like'
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function removeLike(Request $request)
     {
-        //
-    }
+        $like = Like::find($request->like_id);
+        $like->delete();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Likes $likes)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Likes  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Likes $likes)
-    {
-        //
+        return response()->json([
+            'status' => 200,
+            'message' => 'Deleted like'
+        ]);
     }
 }

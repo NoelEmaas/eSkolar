@@ -17,11 +17,13 @@ class CommentResource extends JsonResource
      */
     public function toArray($request)
     {
+        $created_at = new DateTime($this->created_at);
+        $formatted_date = $created_at->format('M j, Y');
         return [
             'id' => $this->id,
             'user' => new UserResource($this->user),
             'comment' => $this->comment,
-            'created_at' => $this->created_at
+            'created_at' => $formatted_date,
         ];
     }
 }

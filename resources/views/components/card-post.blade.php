@@ -74,8 +74,9 @@
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div>
-                    <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2">{{ $like_count }} Stars</span>
+                    <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
+                    <span class="px-2" id="{{ $id }}_card_post_star_count">{{ $like_count }}</span>
+                    <!-- <span class="px-2">stars</span> -->
                 </div>
                 <div class="d-flex justiy-content-center align-items-center">
                     <a href="#" class="text-decoration-none" style="color: black;">
@@ -97,4 +98,23 @@
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
+
+    let star{{ $id }} = document.getElementById("{{ $id }}_card_post_star");
+    let starCount{{ $id }} = document.getElementById("{{ $id }}_card_post_star_count");
+
+    star{{ $id }}.addEventListener("click", () => {
+        if (star{{ $id }}.classList.contains('bi-star')) {
+            // Fill the star
+            star{{ $id }}.classList.remove('bi-star');
+            star{{ $id }}.classList.add('bi-star-fill');
+            // Increment the like count
+            starCount{{ $id }}.innerHTML = parseInt(starCount{{ $id }}.innerHTML) + 1;
+        } else {
+            //  Empty the star
+            star{{ $id }}.classList.remove('bi-star-fill');
+            star{{ $id }}.classList.add('bi-star');
+            // Decrement the like Count
+            starCount{{ $id }}.innerHTML = parseInt(starCount{{ $id }}.innerHTML) - 1;
+        }
+    });
 </script>

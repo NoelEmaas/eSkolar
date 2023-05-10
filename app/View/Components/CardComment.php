@@ -8,6 +8,8 @@ use DateTime;
 
 class CardComment extends Component
 {
+    public $id;
+    public $authorId;
     public $authorName;
     public $comment;
     public $created_at;
@@ -18,12 +20,13 @@ class CardComment extends Component
      */
     public function __construct($comment)
     {
-        $date = new DateTime($this->created_at);
-        $formattedDate = $date->format('M j, Y');
-        \Log::info($comment->created_at);
+        $createAt = new DateTime($comment->created_at);
+        $formatted = $createAt->format('M j, Y');
+        $this->id = $comment->id;
+        $this->authorId = $comment->user_id;
         $this->comment = $comment->comment;
         $this->authorName = $comment->user->first_name.' '.$comment->user->last_name;
-        $this->created_at = $formattedDate;
+        $this->created_at = $formatted;
     }
 
     /**

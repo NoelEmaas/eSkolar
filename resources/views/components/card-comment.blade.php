@@ -7,7 +7,6 @@
                 <h6 class="fw-bold mb-1">{{ $authorName }}</h6>
                 <div class="d-flex align-items-center mb-3">
                     <p class="mb-0 small text-muted">
-                        <!-- March 07, 2021 -->
                         {{ $created_at }}
                     </p>
                     <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
@@ -22,7 +21,16 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Report</a></li>
                   <li><a class="dropdown-item" href="#">Reply</a></li>
-                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                  @if(Auth::check() && Auth::user()->id == $authorId)
+                  <li>
+                    <form class="dropdown-item" action="{{ route('delete.comment') }}" method="POST">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit">Delete</input>
+                        <input type="hidden" name="comment_id" value="{{ $id }}" >
+                    </form>
+                  </li>
+                  @endif
                 </ul>
             </div>
 

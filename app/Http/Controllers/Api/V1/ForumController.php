@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\V1\ForumResource;
 use App\Http\Resources\V1\ForumCollection;
 use App\Filters\V1\ForumQuery;
+use App\Http\Requests\V1\StoreForumRequest;
 
 
 class ForumController extends Controller
@@ -20,81 +21,42 @@ class ForumController extends Controller
      */
     public function index(Request $request)
     {
-        // Do filters later on 
-        // $filter = new ForumQuery();
-        // $queryItems = $filter->transform($request);
-
-        // if (count($queryItems) == 0) 
-        //     return new ForumCollection(Forum::paginate());
-        // else 
-        //     return new ForumCollection(Forum::where($queryItems)->paginate());
-
-        return new ForumCollection(Forum::paginate());
+        return view('forums', ['forums' => new ForumCollection(Forum::all())]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreForumRequest $request)
     {
-        //
+        $forum = new ForumResource(Forum::create([
+            'title' => $request->title,
+            'description' => $request->description
+        ]));
+        return redirect('forums')->with('Success', 'Successfully created forum');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Forum $forum)
+    public function show(string $forum_id)
     {
-        return new ForumResource($forum);
+        return view('viewForum', ['forum' => new ForumResource(Forum::find($forum_id))]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Forum $forum)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Forum $forum)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Forum  $forum
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Forum $forum)
+    public function destroy(Request $request)
     {
-        //
+        $forum = Forum::find($request->id);
+        $forum->delete();
+        return redirect()->back()->with('Success', 'Successfully deleted forum');
     }
 }
