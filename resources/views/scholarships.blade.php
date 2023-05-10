@@ -74,13 +74,13 @@
 
 <div class="container mt-4">
     <div class="row">
-        {{-- <x-card-view-full-post /> --}}
+        <x-card-view-full-post />
+        {{-- <x-card-post />
         <x-card-post />
         <x-card-post />
         <x-card-post />
         <x-card-post />
-        <x-card-post />
-        <x-card-post />
+        <x-card-post /> --}}
     </div>
 </div>
 @endsection

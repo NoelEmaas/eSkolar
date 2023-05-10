@@ -1,7 +1,10 @@
 <?php
 
+use App\Mail\SendMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\CustomAuthController;
 
 /*
@@ -33,11 +36,14 @@ Route::get('/forums', function () {
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    Mail::to('test@example.com')->send(new SendMail());
+    // return view('contact');
 });
 
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/send', [MailController::class, 'index']);
 
 

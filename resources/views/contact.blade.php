@@ -12,29 +12,50 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="mb-3">
-                <label for="inputEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="name@company.com">
-            </div>
-            <div class="mb-3">
-                <label for="inputName" class="form-label">Enter Name</label>
-                <input type="text" class="form-control" id="inputName" placeholder="John Doe">
-            </div>
-            <div class="mb-3">
-                <label for="inputSubject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="inputSubject" placeholder="Let us know how we can help you">
-            </div>
-            <div class="mb-2">
-                <label for="inputMessage" class="form-label">Your Message</label>
-                <textarea class="form-control" id="inputMesage" placeholder="..." style="height: 200px"></textarea>
-            </div>
-        </div>
-        <div class="card-footer border border-0  py-4 bg-white ">
-            <div class="d-flex justify-content-end mt-2">
-                <button class="btn me-5">Reset</button>
-                <button class="btn px-4 py-2" style="background-color: #677BD7; color: white;">Send Message</button>
-            </div>
+            <form  action="https://formsubmit.co/eskolar.se@gmail.com" method="POST">
+                <div class="mb-3">
+                    <label for="senderEmail" class="form-label">Email address</label>
+                    <input name="email" type="email" class="form-control" id="senderEmail" placeholder="name@company.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Enter Name</label>
+                    <input name="name" type="text" class="form-control" id="inputName" placeholder="John Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="inputSubject" class="form-label">Subject</label>
+                    <input name="subject" type="text" class="form-control" id="inputSubject" placeholder="Let us know how we can help you">
+                </div>
+                <div class="mb-2">
+                    <label for="inputMessage" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="inputMesage" placeholder="..." style="height: 200px"></textarea>
+                </div>
+                <div class="d-flex justify-content-end mt-5 mb-3">
+                    <button class="btn me-5">Reset</button>
+                    <button class="btn px-4 py-2" type="submit" style="background-color: #677BD7; color: white;">Send Message</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.elasticemail.com,
+            Username: "eSkolar@gmail.com",
+            Password: "735A3010874CB67B654EBA0D19804AAA21A4",
+            To: "eskolar.se@gmail.com",
+            From: document.getElementById("senderEmail").value,
+            Subject: "New Contact Inquiry",
+            Body: "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+    }
+</script>
+
 @endsection

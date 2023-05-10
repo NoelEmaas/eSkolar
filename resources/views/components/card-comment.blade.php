@@ -1,6 +1,6 @@
-<div class="d-flex flex-start p-4 rounded mb-3" style="background-color: #f5f5f5;">
+<div class="d-flex flex-start p-4 rounded mb-3 position-relative" style="background-color: #f5f5f5;">
     <img class="rounded-circle shadow-1-strong me-3 d-block"
-        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60" height="40" />
+        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40" height="40" />
     <div>
         <div class="d-flex justify-content-between">
             <div>
@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <div class="dropdown">
+            <div class="dropdown position-absolute" style="top: 20px; right: 20px;">
                 <i class="bi bi-three-dots-vertical fs-3 text-muted " style="cursor: pointer"
                 data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul class="dropdown-menu">
@@ -27,10 +27,7 @@
 
         </div>
         <p class="mb-0">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text ever
-            since the 1500s, when an unknown printer took a galley of type and
-            scrambled it.
-        </p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod earum consectetur, eos nihil quaerat nostrum temporibus nobis magnam! Perspiciatis repellendus error voluptas enim nostrum accusamus sed ratione numquam perferendis autem? Numquam molestiae possimus hic, autem voluptas illum accusamus officiis sit, mollitia optio dolore perferendis assumenda magni vitae doloremque necessitatibus commodi?
+
     </div>
 </div>
