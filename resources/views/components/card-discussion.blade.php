@@ -10,8 +10,8 @@
                         </div>
                         <div class="col-auto">
                             <div class="media-body ml-3">
-                                Kenneth Frazier
-                                <div class="text-muted small fw-light" style="font-size: 12px;">3 days ago</div>
+                                {{ $authorName }}
+                                <div class="text-muted small fw-light" style="font-size: 12px;">{{ $created_at }}</div>
                             </div>
                         </div>
                     </div>
@@ -31,22 +31,22 @@
         </div>
         <div class="card-body p-4">
             <div class="title mb-3">
-                <p class="fw-bolder" style="font-size: 16px;">When will be the possible month of Opening Application for TES?</p>
+                <p class="fw-bolder" style="font-size: 16px;">{{ $title }}</p>
             </div>
             <div class="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis felis erat. Donec tortor erat, porta sed pretium vel, ultricies sit amet eros. Sed nec nisl id dolor placerat congue at et felis. Sed semper gravida lorem eget fringilla.</p>
+                <p>{{ $description }}</p>
             </div>
         </div>
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div class="d-flex justiy-content-center align-items-center">
                     <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2">13 Stars</span>
+                    <span class="px-2">{{ $likeCount }}</span>
                 </div>
                 <div class="d-flex justiy-content-center align-items-center">
                     <a href="#" class="text-decoration-none" style="color: black;">
                         <i class="bi bi-chat-left "></i>
-                        <span class="px-2" style="cursor: pointer">13 comments</span>
+                        <span class="px-2" style="cursor: pointer">{{ $commentCount }} comments</span>
                     </a>
                 </div>
             </div>

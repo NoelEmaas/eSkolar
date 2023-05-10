@@ -4,10 +4,10 @@
     <div>
         <div class="d-flex justify-content-between">
             <div>
-                <h6 class="fw-bold mb-1">Maggie Marsh</h6>
+                <h6 class="fw-bold mb-1">{{ $authorName }}</h6>
                 <div class="d-flex align-items-center mb-3">
                     <p class="mb-0 small text-muted">
-                        March 07, 2021
+                        {{ $created_at }}
                     </p>
                     <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
                     <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
@@ -21,13 +21,22 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Report</a></li>
                   <li><a class="dropdown-item" href="#">Reply</a></li>
-                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                  @if(Auth::check() && Auth::user()->id == $authorId)
+                  <li>
+                    <form class="dropdown-item" action="{{ route('delete.comment') }}" method="POST">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit">Delete</input>
+                        <input type="hidden" name="comment_id" value="{{ $id }}" >
+                    </form>
+                  </li>
+                  @endif
                 </ul>
             </div>
 
         </div>
         <p class="mb-0">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius sunt saepe eligendi doloribus recusandae tempore. Ullam quia odio eaque explicabo perspiciatis accusamus magnam repellat eveniet cupiditate omnis, maiores nihil facilis repellendus tenetur consequatur sed perferendis in sequi illo repudiandae assumenda minima similique? Optio aspernatur iure commodi cum et illo!
+            {{ $comment }}
         </p>
 
     </div>

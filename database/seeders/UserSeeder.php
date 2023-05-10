@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-// use Carbon\Carbon;
-// use Illuminate\Support\Str;
-// use Illuminate\Support\Facades\Hash;
+use App\Models\Scholarship;
+use App\Models\Forum;
 
 class UserSeeder extends Seeder
 {
@@ -18,11 +17,19 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::factory()
-            ->count(10)
-            ->hasScholarships(5)
-            ->hasForums(5)
+            ->count(20)
+            ->create();
+
+        Scholarship::factory()
+            ->count(20)
+            ->hasLikes(5)
             ->hasComments(5)
-            ->hasLikes(20)
+            ->create();
+
+        Forum::factory()
+            ->count(20)
+            ->hasLikes(5)
+            ->hasComments(5)
             ->create();
     }
 }

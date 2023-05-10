@@ -53,11 +53,11 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 <div class="container mt-4">
     <div class="row">
         {{-- <x-card-view-full-discussion /> --}}
-        <x-card-discussion />
-        <x-card-discussion />
-        <x-card-discussion />
-        <x-card-discussion />
-        <x-card-discussion />
+        @foreach ($forums as $forum)
+            <a href="{{ route('getForum', ['forum_id' => $forum->id]) }}">
+                <x-card-discussion :forum=$forum /> 
+            </a>
+        @endforeach
     </div>
 </div>
 @endsection
