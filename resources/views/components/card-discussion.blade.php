@@ -10,7 +10,9 @@
                         </div>
                         <div class="col-auto">
                             <div class="media-body ml-3">
-                                {{ $authorName }}
+                                <a href="{{ route('getProfile', ['user_id' => $authorId]) }}">
+                                    {{ $authorName }}
+                                </a>
                                 <div class="text-muted small fw-light" style="font-size: 12px;">{{ $created_at }}</div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ use DateTime;
 class CardDiscussion extends Component
 {
     public $id;
+    public $authorId;
     public $authorName;
     public $title;
     public $description;
@@ -22,6 +23,7 @@ class CardDiscussion extends Component
         $formattedDate = $createdAt->format('M j, Y');
 
         $this->id = $forum->id;
+        $this->authorId = $forum->user->id;
         $this->authorName = $forum->user->first_name.' '.$forum->user->last_name;
         $this->title = $forum->title;
         $this->description = $forum->description;

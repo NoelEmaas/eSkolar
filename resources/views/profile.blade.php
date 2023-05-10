@@ -9,22 +9,22 @@
                     <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="rounded-circle" width="140" style="border: 2px solid #DEE2E6;">
                 </div>
                 <div class="col-auto m-auto">
-                    <h1 class="mb-0 fw-bold">Juan Dela Cruz</h1>
+                    <h1 class="mb-0 fw-bold">{{ $user->first_name.' '.$user->last_name }}</h1>
                     <span style="color: #677BD7;">Scholarship: CHED Scholar</span>
                 </div>
             </div>
             <div class="col-lg col-md-6 col-12 row gx-lg-5 gx-2 m-lg-0 m-auto pt-sm-0 pt-4">
                 <div class="col m-auto">
                     <p class="text-center text-muted">Posts</p>
-                    <h5 class="text-center fs-3 fw-bold">6</h5>
+                    <h5 class="text-center fs-3 fw-bold">{{ $user->scholarship_count }}</h5>
                 </div>
                 <div class="col m-auto">
                     <p class="text-center text-muted">Forums</p>
-                    <h5 class="text-center fs-3 fw-bold">4</h5>
+                    <h5 class="text-center fs-3 fw-bold">{{ $user->forum_count }}</h5>
                 </div>
                 <div class="col m-auto">
                     <p class="text-center text-muted">Stars</p>
-                    <h5 class="text-center fs-3 fw-bold">16</h5>
+                    <h5 class="text-center fs-3 fw-bold">{{ $user->like_count }}</h5>
                 </div>
             </div>
         </div>
@@ -45,15 +45,37 @@
     </div>
 </div>
 
+<!-- Scholarship Cards -->
 <div class="container mt-4">
     <div class="row">
-        {{-- <x-card-view-full-post /> --}}
-        @fo
-        <x-card-post />
-        @
+        @foreach ($scholarships as $scholarship)
+            <x-card-post :scholarship=$scholarship />
+        @endforeach
     </div>
 </div>
 
+<!-- Forum Cards -->
+<div class="container mt-4">
+    <div class="row">
+        @foreach ($forums as $forum)
+            <x-card-discussion :forum=$forum/>
+        @endforeach
+    </div>
+</div>
+
+<!-- Starred Cards -->
+<div class="container mt-4">
+    <div class="row">
+        @foreach ($starred as $stars) 
+            @if ($stars->benefactor)
+                <x-card-post :scholarship=$stars /> 
+            @else
+                <x-card-discussion :scholarship=$stars /> 
+            @endif
+        @endforeach 
+    </div>
+</div>
+ 
 <script>
     const initalCheckedInput = document.querySelector('input:checked');
     const initialCheckedLabel = initalCheckedInput.nextElementSibling;

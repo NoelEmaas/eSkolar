@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class CardPost extends Component
 {
     public $id;
+    public $authorId;
     public $authorName;
     public $benefactor;
     public $program;
@@ -35,6 +36,7 @@ class CardPost extends Component
         $this->comment_count = $scholarship->comment_count;
 
         $author = $scholarship->user;
+        $this->authorId = $author->id;
         $this->authorName = $author->first_name.' '.$author->last_name;
         $this->author_scholarship_count = $author->scholarship_count;
         $this->author_forum_count = $author->forum_count;

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\ScholarshipController;
 use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\CommentController;
+use App\Http\Controllers\Api\V1\ProfileController;
 
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\CustomAuthController;
@@ -32,9 +33,6 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
 
 // Authentication routes
 Route::post('login', [CustomAuthController::class, 'login'])->name('login');
@@ -45,6 +43,8 @@ Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 Route::get('send', [MailController::class, 'index']);
 Route::post('contact', [MailController::class, 'submit'])->name('contact.submit');
 
+// Profile routes
+Route::get('profile/{user_id}', [ProfileController::class, 'index'])->name('getProfile');
 
 // Scholarship routes
 Route::get('scholarships', [ScholarshipController::class, 'index'])->name('getScholarships');
