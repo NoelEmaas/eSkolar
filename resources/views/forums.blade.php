@@ -9,8 +9,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <p class="fs-5 fw-bold text-light pt-3">Ask help to others</p>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body px-xxl-5 px-xl-5 px-lg-5 px-md-5 px-2 pb-4">
-                <form>
+            <form action="{{ route('addForum') }}" method="POST"">
+                @csrf
+                <div class="modal-body px-4 pb-4">
                     <div class="mb-3">
                         <label for="inputTitle" class="form-label">Discussion Title</label>
                         <input type="text" class="form-control" id="inputTitle" aria-describedby="emailHelp"
