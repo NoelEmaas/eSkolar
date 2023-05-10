@@ -45,7 +45,7 @@
                                 <a href="{{ route('getProfile', ['user_id' => $authorId]) }}">
                                     {{ $authorName }} 
                                 </a>
-                                <div class="text-muted small" style="font-size: 12px">3 days ago</div>
+                                <div class="text-muted small" style="font-size: 12px">{{ $created_at->format('M j, Y') }}</div>
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,9 @@
                             </div>
                             <div class="col-auto">
                                 <div class="media-body ml-3">
-                                    {{ $forum->user->first_name.' '.$forum->user->last_name }}
+                                    <a href="{{ route('getProfile', ['user_id' => $forum->user->id]) }}">
+                                        {{ $forum->user->first_name.' '.$forum->user->last_name }}
+                                    </a>
                                     <div class="text-muted small">{{ $forum->created_at->format('M j, Y') }}</div>
                                 </div>
                             </div>

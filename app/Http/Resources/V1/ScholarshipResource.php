@@ -28,6 +28,7 @@ class ScholarshipResource extends JsonResource
             'comments' => new CommentCollection($this->comments),
             'comment_count' => $this->comment_count,
             'like_count' => $this->like_count,
+            'created_at' => $this->created_at
         ];
     }
 }

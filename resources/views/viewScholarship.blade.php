@@ -14,7 +14,9 @@
                             </div>
                             <div class="col-auto">
                                 <div class="media-body ml-3">
-                                    {{ $scholarship->user->first_name.' '.$scholarship->user->last_name }}
+                                    <a href="{{ route('getProfile', ['user_id' => $scholarship->user->id]) }}">
+                                        {{ $scholarship->user->first_name.' '.$scholarship->user->last_name }}
+                                    </a>
                                     <div class="text-muted small">{{ $scholarship->created_at->format('M j, Y') }}</div>
                                 </div>
                             </div>
