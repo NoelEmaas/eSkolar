@@ -36,9 +36,10 @@ Route::get('/forums', function () {
 });
 
 Route::get('/contact', function () {
-    Mail::to('test@example.com')->send(new SendMail());
-    // return view('contact');
+    return view('contact');
 });
+
+Route::post('/contact', [MailController::class, 'submit'])->name('contact.submit');
 
 Route::get('/profile', function () {
     return view('profile');

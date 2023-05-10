@@ -27,7 +27,8 @@
 
         </div>
         <p class="mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod earum consectetur, eos nihil quaerat nostrum temporibus nobis magnam! Perspiciatis repellendus error voluptas enim nostrum accusamus sed ratione numquam perferendis autem? Numquam molestiae possimus hic, autem voluptas illum accusamus officiis sit, mollitia optio dolore perferendis assumenda magni vitae doloremque necessitatibus commodi?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eius sunt saepe eligendi doloribus recusandae tempore. Ullam quia odio eaque explicabo perspiciatis accusamus magnam repellat eveniet cupiditate omnis, maiores nihil facilis repellendus tenetur consequatur sed perferendis in sequi illo repudiandae assumenda minima similique? Optio aspernatur iure commodi cum et illo!
+        </p>
 
     </div>
 </div>
