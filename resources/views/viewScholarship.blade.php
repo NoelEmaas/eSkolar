@@ -15,7 +15,7 @@
                             <div class="col-auto">
                                 <div class="media-body ml-3">
                                     {{ $scholarship->user->first_name.' '.$scholarship->user->last_name }}
-                                    <div class="text-muted small">3 days ago</div>
+                                    <div class="text-muted small">{{ $scholarship->created_at->format('M j, Y') }}</div>
                                 </div>
                             </div>
                         </div>

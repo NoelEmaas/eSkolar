@@ -16,7 +16,7 @@
                             <div class="col-auto">
                                 <div class="media-body ml-3">
                                     {{ $forum->user->first_name.' '.$forum->user->last_name }}
-                                    <div class="text-muted small">{{ $forum->created_at }}</div>
+                                    <div class="text-muted small">{{ $forum->created_at->format('M j, Y') }}</div>
                                 </div>
                             </div>
                         </div>
