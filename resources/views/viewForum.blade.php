@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container pt-5 mt-5">
+<div class="container pt-5 mt-5"  style="min-height: 80vh;">
     <div class="col-12 mb-4 mx-auto">
         <div class="card">
             <div class="card-header py-3 bg-white">
@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-auto">
                                 <div class="media-body ml-3">
-                                    <a href="{{ route('getProfile', ['user_id' => $forum->user->id]) }}">
+                                    <a href="{{ route('getProfile', ['user_id' => $forum->user->id]) }}" style="color: inherit;">
                                         {{ $forum->user->first_name.' '.$forum->user->last_name }}
                                     </a>
                                     <div class="text-muted small">{{ $forum->created_at->format('M j, Y') }}</div>
@@ -55,25 +55,29 @@
                         </a>
                     </div>
                 </div>
-                <div class="d-flex flex-start p-4 rounded mb-3" style="background-color: #f5f5f5;">
-                    <img class="rounded-circle shadow-1-strong me-3 d-block"
-                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40"
-                        height="40" />
 
-                    <form action="{{ route('add.comment') }}" method="POST" class="w-100">
-                        @csrf
-                        <div class="form-group w-100 d-flex">
-                            <textarea class="form-control w-100" name="comment" id="exampleFormControlTextarea1" rows="2"
-                                placeholder="write comment here"></textarea>
-                                <input type="hidden" name="type" value="forum">
-                                <input type="hidden" name="id" value="{{ $forum->id }}">
-                            <div>
-                                <button type="submit" class="btn btn-primary ms-3"><i class="bi bi-send"></i></button>
+                @if(Auth::check())
+                    <div class="d-flex flex-start p-4 rounded mb-3" style="background-color: #f5f5f5;">
+                        <img class="rounded-circle shadow-1-strong me-3 d-block"
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40"
+                            height="40" />
+
+                        <form action="{{ route('add.comment') }}" method="POST" class="w-100">
+                            @csrf
+                            <div class="form-group w-100 d-flex">
+                                <textarea class="form-control w-100" name="comment" id="exampleFormControlTextarea1" rows="2"
+                                    placeholder="write comment here"></textarea>
+                                    <input type="hidden" name="type" value="forum">
+                                    <input type="hidden" name="id" value="{{ $forum->id }}">
+                                <div>
+                                    <button type="submit" class="btn btn-primary ms-3"><i class="bi bi-send"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <hr>
+                        </form>
+                    </div>
+                    <hr>
+                @endif
+
                 @foreach ($forum->comments as $comment)
                     <x-card-comment :comment=$comment />
                 @endforeach

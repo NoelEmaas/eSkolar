@@ -22,7 +22,7 @@
 
     <x-footer/>
 
-    <button type="button" class="btn btn-floating btn-lg rounded-circle" id="btn-back-to-top">
+    <button type="button" class="btn btn-floating btn-lg rounded-circle bg-blue" id="btn-back-to-top">
         <i class="bi bi-arrow-up"></i>
     </button>
 

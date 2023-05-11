@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid d-flex justify-content-center align-items-center mt-5 pt-md-3 pt-0">
-    <div class="container mt-5 d-flex justify-content-center py-4 position-relative" style="box-shadow: 0px 0px 5px rgb(203, 209, 214); border-radius: 10px;">
+    <div class="container mt-5 d-flex justify-content-center py-4 position-relative" style="box-shadow: 0px 0px 5px rgb(203, 209, 214); border-radius: 10px; background-color: white;">
         <div class="row m-auto">
             <div class="col-lg-auto col-md-12 row m-auto">
                 <div class="image col-auto m-auto py-4">
@@ -33,7 +33,7 @@
 </div>
 
 <div class="container d-flex justify-content-end mt-4">
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="box-shadow: 0px 0px 5px rgb(203, 209, 214);">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="box-shadow: 0px 0px 5px rgb(203, 209, 214); background-color: white;">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
         <label class="btn px-4 btn-border" for="btnradio1">Posts</label>
         
@@ -45,27 +45,24 @@
     </div>
 </div>
 
-<!-- Scholarship Cards -->
-<div class="container mt-4">
-    <div class="row">
+
+<div class="container mt-4" style="min-height: 80vh;">
+    <!-- Scholarship Cards -->
+    <div class="row card-row d-flex" id="scholarship-cards">
         @foreach ($scholarships as $scholarship)
             <x-card-post :scholarship=$scholarship />
         @endforeach
     </div>
-</div>
 
-<!-- Forum Cards -->
-<div class="container mt-4">
-    <div class="row">
+    <!-- Forum Cards -->
+    <div class="row card-row d-none" id="forum-cards">
         @foreach ($forums as $forum)
             <x-card-discussion :forum=$forum/>
         @endforeach
     </div>
-</div>
 
-<!-- Starred Cards -->
-<div class="container mt-4">
-    <div class="row">
+    <!-- Starred Cards -->
+    <div class="row card-row d-none" id="starred-cards">
         @foreach ($starred as $stars) 
             @if ($stars->benefactor)
                 <x-card-post :scholarship=$stars /> 
@@ -75,10 +72,12 @@
         @endforeach 
     </div>
 </div>
+
  
 <script>
     const initalCheckedInput = document.querySelector('input:checked');
     const initialCheckedLabel = initalCheckedInput.nextElementSibling;
+    const card_rows = document.getElementsByClassName('card-row');
     activateButton(initialCheckedLabel);
 
     const radios = document.querySelectorAll('input[type="radio"]');
@@ -92,6 +91,24 @@
         radio.checked = true;
         const checkedLabel = radio.nextElementSibling;
         console.log(checkedLabel.textContent);
+        
+        for (let i = 0; i < card_rows.length; i++) {
+            card_rows[i].classList.add("d-none");
+        }
+
+        if(checkedLabel.textContent === "Forums"){
+            document.getElementById('forum-cards').classList.remove("d-none");
+            document.getElementById('forum-cards').classList.add('d-flex');
+        }
+        if(checkedLabel.textContent === "Posts"){
+            document.getElementById('scholarship-cards').classList.remove("d-none");
+            document.getElementById('scholarship-cards').classList.add('d-flex');
+        }
+        if(checkedLabel.textContent === "Stars"){
+            document.getElementById('starred-cards').classList.remove("d-none");
+            document.getElementById('starred-cards').classList.add('d-flex');
+        }
+
         activateButton(checkedLabel);
     });
     });

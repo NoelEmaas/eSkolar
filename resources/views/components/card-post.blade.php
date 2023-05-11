@@ -1,5 +1,5 @@
 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-    <div class="card border-0" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+    <div class="card border-0 scholarship-card" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
         <div class="card-header py-3 bg-white" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
                 <div class="container py-2">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-auto">
                             <div class="media-body ml-3">
-                                <a href="{{ route('getProfile', ['user_id' => $authorId]) }}">
+                                <a href="{{ route('getProfile', ['user_id' => $authorId]) }}" style="color: inherit;">
                                     {{ $authorName }} 
                                 </a>
                                 <div class="text-muted small" style="font-size: 12px">{{ $created_at->format('M j, Y') }}</div>
@@ -55,8 +55,8 @@
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        @if(request()->is('profile'))
-                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                        @if(request()->is('profile/{{$authorId}}'))
+                            <li><a class="dropdown-item" href="#">Edit </a></li>
                             <li><a class="dropdown-item" href="#">Delete</a></li>
                         @endif
                     </ul>
