@@ -17,7 +17,7 @@ class ScholarshipController extends Controller
 {
     public function index()
     {
-        return view('scholarships', ['scholarships' => new ScholarshipCollection(Scholarship::all())]);
+        return view('scholarships', ['scholarships' => (new ScholarshipCollection(Scholarship::all()))->sortByDesc('created_at')]);
     }
 
     public function create()
@@ -48,9 +48,18 @@ class ScholarshipController extends Controller
         //
     }
 
-    public function update(UpdateScholarshipRequest $request, Scholarship $scholarship)
+    public function update(UpdateScholarshipRequest $request)
     {
-        $scholarship->update($request->all());
+        $scholarship->update([
+            'benefactor' => $request->benefactor,
+            'program' => $request->program,
+            'description' => $request->description,
+            'amount_min' => $request->amount_min,
+            'amount_max' => $request->amount_max,
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->back()->with('Success', 'Successfull updated scholarship.');
     }
 
     public function destroy(Request $request)

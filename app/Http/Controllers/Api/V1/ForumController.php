@@ -22,7 +22,7 @@ class ForumController extends Controller
      */
     public function index(Request $request)
     {
-        return view('forums', ['forums' => new ForumCollection(Forum::all())]);
+        return view('forums', ['forums' => (new ForumCollection(Forum::all()))->sortByDesc('created_at')]);
     }
 
     public function create()
