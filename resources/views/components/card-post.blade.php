@@ -55,9 +55,11 @@
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        @if(request()->is('profile/' . $authorId))
-                            <li><a class="dropdown-item" href="#">Edit </a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @if(Auth::check())
+                            @if(Auth::user()->id == $authorId)
+                                <li type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createPostModal">Edit</li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            @endif
                         @endif
                     </ul>
                 </div>
@@ -134,4 +136,5 @@
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
+
 </script>
