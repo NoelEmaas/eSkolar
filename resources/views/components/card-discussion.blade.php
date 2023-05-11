@@ -56,9 +56,9 @@
                     <input type="hidden" name="id" value="{{ $id }}" >
                     <input type="hidden" name="type" value="forum" >
                     @if (Auth::user())
-                    <button type="submit">
+                    <button type="submit" class="btn border-0 p-0 m-0">
                     @else
-                    <button type="button">
+                    <button type="button" class="btn border-0 p-0 m-0">
                     @endif
                         <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
                             @if ($liked_by_user)    
