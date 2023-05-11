@@ -34,10 +34,15 @@ class CardPost extends Component
      */
     public function __construct($scholarship)
     {
-        $liked = Like::where('user_id', '=', Auth::user()->id)
-                    ->where('likeable_type', '=', Scholarship::class)
-                    ->where('likeable_id', '=', $scholarship->id)
-                    ->first();
+        $liked = null;
+
+        if(Auth::check()){
+            $liked = Like::where('user_id', '=', Auth::user()->id)
+            ->where('likeable_type', '=', Scholarship::class)
+            ->where('likeable_id', '=', $scholarship->id)
+            ->first();
+        }
+
         $this->liked_by_user = !is_null($liked);
 
         $this->id = $scholarship->id;

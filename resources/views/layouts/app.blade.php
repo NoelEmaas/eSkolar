@@ -14,6 +14,13 @@
     <x-sign-in-form />
     <x-sign-up-form />
 
+    <div class="modal fade" id="not-logged-in-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <x-not-logged-in-modal />
+        </div>
+    </div>
+
     <x-header/>
 
     <main>

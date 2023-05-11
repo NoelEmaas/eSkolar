@@ -85,33 +85,41 @@
 
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
-
-                <!-- Like button form -->
-                @if ($liked_by_user)
-                <form action="{{ route('delete.like') }}" method="POST">
-                @method('DELETE')
-                @else
-                <form action="{{ route('add.like') }}" method="POST">
-                @endif
-                @csrf
-                    <input type="hidden" name="id" value="{{ $id }}" >
-                    <input type="hidden" name="type" value="scholarship" >
-                    @if (Auth::user())
-                    <button type="submit" class="btn border-0 p-0 m-0">
+                @if(Auth::check())
+                    <!-- Like button form -->
+                    @if ($liked_by_user)
+                    <form action="{{ route('delete.like') }}" method="POST">
+                    @method('DELETE')
                     @else
-                    <button type="button" class="btn border-0 p-0 m-0">
+                    <form action="{{ route('add.like') }}" method="POST">
                     @endif
+                    @csrf
+                        <input type="hidden" name="id" value="{{ $id }}" >
+                        <input type="hidden" name="type" value="scholarship" >
+                        @if (Auth::user())
+                        <button type="submit" class="btn border-0 p-0 m-0">
+                        @else
+                        <button type="button" class="btn border-0 p-0 m-0">
+                        @endif
+                            <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
+                                @if ($liked_by_user)
+                                    <i class="bi bi-star-fill" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
+                                @else
+                                    <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
+                                @endif
+                                <span class="ps-2 fw-bold" id="{{ $id }}_card_post_star_count">{{ $like_count }} stars</span>
+                            </div>
+                        </button>
+                    </form>
+                    <!-- End of Like button form -->
+                @else 
+                    <button type="button" class="btn border-0 p-0 m-0" data-bs-toggle="modal" data-bs-target="#not-logged-in-modal">
                         <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
-                            @if ($liked_by_user)
-                                <i class="bi bi-star-fill" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
-                            @else
-                                <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
-                            @endif
+                            <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
                             <span class="ps-2 fw-bold" id="{{ $id }}_card_post_star_count">{{ $like_count }} stars</span>
                         </div>
                     </button>
-                </form>
-                <!-- End of Like button form -->
+                @endif
                 
                 <div class="d-flex justiy-content-center align-items-center px-3 py-2 rounded" style="background-color: #e6f8f0;">
                     <a href="#" class="text-decoration-none fw-bold" style="color: #008f53; font-size: 10px;">

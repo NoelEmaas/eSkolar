@@ -24,10 +24,15 @@ class CardDiscussion extends Component
 
     public function __construct($forum)
     {
-        $liked = Like::where('user_id', '=', Auth::user()->id)
-                    ->where('likeable_type', '=',Forum::class)
-                    ->where('likeable_id', '=', $forum->id)
-                    ->first();
+        $liked = null;
+
+        if(Auth::check()) {
+            $liked = Like::where('user_id', '=', Auth::user()->id)
+            ->where('likeable_type', '=',Forum::class)
+            ->where('likeable_id', '=', $forum->id)
+            ->first();
+        }
+
         $this->liked_by_user = !is_null($liked);
 
         $this->id = $forum->id;

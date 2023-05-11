@@ -9,10 +9,12 @@
         <li>Create Post Module</li>
         <li>Create Forum Module</li>
         <li>Create Comment Module</li>
+        <li>Star Post Module</li>
+        <li>Report Post Module</li>
     </ul>
     </div>
     <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue browsing</button>
-    <button type="button" class="btn btn-primary">Go to login</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in-form">Go to login</button>
     </div>
 </div>
