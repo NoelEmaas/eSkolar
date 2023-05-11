@@ -57,7 +57,14 @@
                         <li><a class="dropdown-item" href="#">Report</a></li>
                         @if(request()->is('profile/' . $authorId))
                             <li><a class="dropdown-item" href="#">Edit </a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li>
+                                <form action="{{ route('deleteScholarship') }}" method="POST"> 
+                                @csrf
+                                @method('DELETE')
+                                    <input type="hidden" name="scholarship_id" value="{{ $id }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </li>
                         @endif
                     </ul>
                 </div>

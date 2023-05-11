@@ -23,9 +23,16 @@
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        @if(request()->is('profile'))
+                        @if(request()->is('profile/' . $authorId))
                             <li><a class="dropdown-item" href="#">Edit</a></li>
-                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li>
+                                <form action="{{ route('deleteForum') }}" method="POST"> 
+                                @csrf
+                                @method('DELETE')
+                                    <input type="hidden" name="forum_id" value="{{ $id }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </li>
                         @endif
                     </ul>
                 </div>
