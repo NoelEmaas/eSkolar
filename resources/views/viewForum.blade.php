@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container pt-5 mt-5">
+<div class="container pt-5 mt-5"  style="min-height: 80vh;">
     <div class="col-12 mb-4 mx-auto">
         <div class="card">
             <div class="card-header py-3 bg-white">
