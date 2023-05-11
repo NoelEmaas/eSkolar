@@ -4,6 +4,7 @@
 <div class="modal fade" id="createForumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
 aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
+        @if(Auth::check())
         <div class="modal-content">
             <div class="modal-header py-2 px-4 d-flex justify-content-start align-items-center" style="background-color: #1A56DB;">
                 <p class="fs-5 fw-bold text-light pt-3">Ask help to others</p>
@@ -30,6 +31,9 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 </div>
             </form>
         </div>
+        @else 
+        <x-not-logged-in-modal />
+        @endif
     </div>
 </div>
 
