@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AddEditForum extends Component
+class AddScholarship extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class AddEditForum extends Component
      */
     public function render()
     {
-        return view('components.add-edit-forum');
+        return view('components.add-scholarship');
     }
 }

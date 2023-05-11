@@ -48,8 +48,8 @@ class CardPost extends Component
         $this->id = $scholarship->id;
         $this->benefactor = $scholarship->benefactor;
         $this->program = $scholarship->program;
-        $this->amount_min = number_format($scholarship->amount_min, 2);
-        $this->amount_max = number_format($scholarship->amount_max, 2);
+        $this->amount_min = $scholarship->amount_min;
+        $this->amount_max = $scholarship->amount_max;
         $this->description = $scholarship->description;
         $this->like_count = $scholarship->like_count;
         $this->comment_count = $scholarship->comment_count;

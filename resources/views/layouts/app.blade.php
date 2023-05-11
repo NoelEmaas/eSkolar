@@ -21,8 +21,10 @@
         </div>
     </div>
 
-    <x-add-edit-post />
-    <x-add-edit-forum />
+    <x-add-scholarship/>
+    <x-add-forum />
+    <x-edit-scholarship/>
+    <x-edit-forum />
 
     <x-header/>
 

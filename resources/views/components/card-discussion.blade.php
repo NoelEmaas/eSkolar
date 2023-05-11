@@ -25,13 +25,19 @@
                         <li><a class="dropdown-item" href="#">Report</a></li>
                         @if(Auth::check())
                             @if(Auth::user()->id == $authorId)
-                            <li class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#createForumModal">Edit</li>
-                            <li class="dropdown-item">
+                            <li class="dropdown-item" type="button" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#editForumModal"
+                                data-title="{{ $title }}"
+                                data-description="{{ $description }}"
+                                data-forum-id="{{ $id }}"
+                                >Edit</li>
+                            <li>
                                 <form action="{{ route('deleteForum') }}" method="POST"> 
                                 @csrf
                                 @method('DELETE')
                                     <input type="hidden" name="forum_id" value="{{ $id }}">
-                                    <button class="btn border-0 p-0" type="submit">Delete</button>
+                                    <button type="submit">Delete</button>
                                 </form>
                             </li>
                             @endif
@@ -102,3 +108,29 @@
         </div>
     </div>
 </div>
+
+<style>
+.deleteButton {
+background:none;
+border:none;
+margin-left:1rem;
+padding:0;
+}
+</style>
+
+
+<script>
+    // Load data to edit Forum modal
+    window.addEventListener('load', function() {
+        $(document).ready(function () {
+            $("#editForumModal").on("show.bs.modal", function (e) {
+                const forum_id = $(e.relatedTarget).data('forum-id');
+                const title = $(e.relatedTarget).data('title');
+                const description = $(e.relatedTarget).data('description');
+                $('#forumId').val(forum_id);
+                $('#inputTitle').val(title);
+                $('#inputForumDescription').val(description);
+            });
+        });
+})
+</script>

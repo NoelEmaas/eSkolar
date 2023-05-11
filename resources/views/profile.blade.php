@@ -121,7 +121,6 @@
         });
         radio.checked = true;
         const checkedLabel = radio.nextElementSibling;
-        console.log(checkedLabel.textContent);
         
         for (let i = 0; i < card_rows.length; i++) {
             card_rows[i].classList.add("d-none");
