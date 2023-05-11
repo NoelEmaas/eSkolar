@@ -21,6 +21,9 @@
         </div>
     </div>
 
+    <x-add-edit-post />
+    <x-add-edit-forum />
+
     <x-header/>
 
     <main>
@@ -82,6 +85,7 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     @yield('scripts')

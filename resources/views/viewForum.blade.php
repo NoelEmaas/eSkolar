@@ -28,8 +28,12 @@
                         data-bs-toggle="dropdown" aria-expanded="false"></i>
                         <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                        @if(Auth::check())
+                            @if(Auth::user()->id == $forum->user->id)
+                                <li type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createForumModal">Edit</li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            @endif
+                        @endif
                         </ul>
                     </div>
                 </div>
