@@ -9,30 +9,32 @@ use App\Models\Forum;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
+use DB;
+
 class LikeController extends Controller
 {
-    public function addLike(Request $request)
+    public function store(Request $request)
     {
         $like = Like::create([
             'user_id' => Auth::id(),
             'likeable_id' => $request->id,  
-            'likeable_type' => ($type == 'scholarship') ? Scholarship::class : Forum::class
+            'likeable_type' => ($request->type == 'scholarship') ? Scholarship::class : Forum::class
         ]);
 
-        return response()->json([
-            'status' => 200,
-            'message' => 'Added like'
-        ]);
+        return redirect()->back()->with('Success', 'Liked post');
     }
 
-    public function removeLike(Request $request)
+    public function destroy(Request $request)
     {
-        $like = Like::find($request->like_id);
+        $like = Like::where('user_id', '=', Auth::user()->id)
+                    ->where('likeable_id', '=', $request->id)
+                    ->where('likeable_type', '=', ($request->type == 'scholarship') ? Scholarship::class : Forum::class)
+                    ->first();
+
         $like->delete();
 
-        return response()->json([
-            'status' => 200,
-            'message' => 'Deleted like'
-        ]);
+        return redirect()->back()->with('Success', 'Unliked post');
     }
 }

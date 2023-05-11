@@ -7,6 +7,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\V1\UserResource; 
 use App\Http\Resources\V1\CommentCollection;
 
+use App\Models\Scholarship;
+
+use Illuminate\Support\Facades\Auth;
+use DB;
+
 class ScholarshipResource extends JsonResource
 {
     /**
@@ -25,10 +30,9 @@ class ScholarshipResource extends JsonResource
             'description' => $this->description,
             'amount_min' => $this->amount_min,
             'amount_max' => $this->amount_max,
-            'comments' => new CommentCollection($this->comments),
             'comment_count' => $this->comment_count,
             'like_count' => $this->like_count,
-            'created_at' => $this->created_at
+            'created_at' => $this->created_at,
         ];
     }
 }

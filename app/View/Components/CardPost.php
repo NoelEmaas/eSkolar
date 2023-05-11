@@ -4,6 +4,11 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Scholarship;
+use App\Models\Like;
+
 class CardPost extends Component
 {
     public $id;
@@ -15,8 +20,10 @@ class CardPost extends Component
     public $amount_max;
     public $description;
     public $like_count;
+    public $liked_by_user;
     public $comment_count;
     public $created_at;
+
     public $author_scholarship_count;
     public $author_forum_count;
     public $author_like_count;
@@ -27,6 +34,12 @@ class CardPost extends Component
      */
     public function __construct($scholarship)
     {
+        $liked = Like::where('user_id', '=', Auth::user()->id)
+                    ->where('likeable_type', '=', Scholarship::class)
+                    ->where('likeable_id', '=', $scholarship->id)
+                    ->first();
+        $this->liked_by_user = !is_null($liked);
+
         $this->id = $scholarship->id;
         $this->benefactor = $scholarship->benefactor;
         $this->program = $scholarship->program;

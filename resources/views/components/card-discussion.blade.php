@@ -13,7 +13,7 @@
                                 <a href="{{ route('getProfile', ['user_id' => $authorId]) }}" style="color: inherit;">
                                     {{ $authorName }}
                                 </a>
-                                <div class="text-muted small fw-light" style="font-size: 12px;">{{ $created_at }}</div>
+                                <div class="text-muted small fw-light" style="font-size: 12px;">{{ $created_at->format('M j, Y') }}</div>
                             </div>
                         </div>
                     </div>
@@ -44,10 +44,34 @@
 
         <div class="card-footer bg-white px-4 py-3 justify-content-center" style="border-color: #DEE2E6;">
             <div class="d-flex justify-content-between">
-                <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
-                    <i class="bi bi-star" style="cursor: pointer"></i>
-                    <span class="px-2 fw-bold">{{ $likeCount }} stars</span>
-                </div>
+
+                <!-- Like button form -->
+                @if ($liked_by_user)
+                <form action="{{ route('delete.like') }}" method="POST">
+                @method('DELETE')
+                @else
+                <form action="{{ route('add.like') }}" method="POST">
+                @endif
+                @csrf
+                    <input type="hidden" name="id" value="{{ $id }}" >
+                    <input type="hidden" name="type" value="forum" >
+                    @if (Auth::user())
+                    <button type="submit">
+                    @else
+                    <button type="button">
+                    @endif
+                        <div class="px-3 py-2 rounded" style="background-color: #fdf2e2; color: #dd8100;">
+                            @if ($liked_by_user)    
+                                <i class="bi bi-star-fill" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
+                            @else
+                                <i class="bi bi-star" id="{{ $id }}_card_post_star" style="cursor: pointer"></i>
+                            @endif
+                            <span class="px-2 fw-bold">{{ $likeCount }} stars</span>
+                        </div>
+                    </button>
+                </form>
+                <!-- End of Like button form -->
+
                 <div class="d-flex justiy-content-center align-items-center px-3 py-2 rounded" style="background-color: #e6f8f0;">
                     <a href="#" class="text-decoration-none fw-bold" style="color: #008f53; font-size: 10px;">
                         <i class="bi bi-chat-left "></i>

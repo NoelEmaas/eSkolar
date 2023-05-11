@@ -19,7 +19,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function() {
-    Route::post('likes', [LikeController::class, 'addLike'])->name('add.like');
-    Route::delete('likes', [LikeController::class, 'deleteLike'])->name('delete.like');
-});

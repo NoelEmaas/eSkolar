@@ -67,7 +67,7 @@
             @if ($stars->benefactor)
                 <x-card-post :scholarship=$stars /> 
             @else
-                <x-card-discussion :scholarship=$stars /> 
+                <x-card-discussion :forum=$stars /> 
             @endif
         @endforeach 
     </div>
