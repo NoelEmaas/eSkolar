@@ -49,6 +49,11 @@
 <div class="container mt-4" style="min-height: 80vh;">
     <!-- Scholarship Cards -->
     <div class="row card-row d-flex" id="scholarship-cards">
+        @if(!count($scholarships))
+            <div class="col-12 w-100 d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                <p class="fs-5 fw-bold text-center" style="color: rgb(200, 200, 200);">No posted scholarships yet</p>
+            </div>
+        @endif
         @foreach ($scholarships as $scholarship)
             <x-card-post :scholarship=$scholarship />
         @endforeach
@@ -56,6 +61,11 @@
 
     <!-- Forum Cards -->
     <div class="row card-row d-none" id="forum-cards">
+        @if(!count($forums))
+            <div class="col-12 w-100 d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                <p class="fs-5 fw-bold text-center" style="color: rgb(200, 200, 200);">No forums yet</p>
+            </div>
+        @endif
         @foreach ($forums as $forum)
             <x-card-discussion :forum=$forum/>
         @endforeach
@@ -63,11 +73,32 @@
 
     <!-- Starred Cards -->
     <div class="row card-row d-none" id="starred-cards">
+        <h6 class="fw-bold text-muted pb-4">Starred Scholarships</h6>
+        @if(!count(array_filter($starred, function($stars) {
+            return $stars->benefactor;
+        })))
+            <div class="col-12 w-100 d-flex justify-content-center align-items-center" style="min-height: 20vh;">
+                <p class="fs-5 fw-bold text-center" style="color: rgb(200, 200, 200);">No starred scholarships yet</p>
+            </div>
+        @endif
+        
         @foreach ($starred as $stars) 
             @if ($stars->benefactor)
                 <x-card-post :scholarship=$stars /> 
-            @else
-                <x-card-discussion :forum=$stars /> 
+            @endif
+        @endforeach 
+
+        <h6 class="fw-bold text-muted pt-4 pb-4">Starred Forums</h6>
+        @if(!count(array_filter($starred, function($stars) {
+            return !($stars->benefactor);
+        })))
+            <div class="col-12 w-100 d-flex justify-content-center align-items-center" style="min-height: 20vh;">
+                <p class="fs-5 fw-bold text-center" style="color: rgb(200, 200, 200);">No starred forums yet</p>
+            </div>
+        @endif
+        @foreach ($starred as $stars) 
+            @if (!$stars->benefactor)
+                <x-card-post :scholarship=$stars /> 
             @endif
         @endforeach 
     </div>

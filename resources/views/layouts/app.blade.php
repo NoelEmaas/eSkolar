@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
         <link rel="stylesheet" type="text/css" href="{{ url('css/main.css') }}" />
     </head>
-<body style="background-color: #F9FAFB;">
+<body style="background-color: {{request()->is('/') ? 'white;' : '#F9FAFB;'}}">
     <x-sign-in-form />
     <x-sign-up-form />
 
