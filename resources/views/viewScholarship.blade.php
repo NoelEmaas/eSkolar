@@ -14,7 +14,7 @@
                             </div>
                             <div class="col-auto">
                                 <div class="media-body ml-3">
-                                    <a href="{{ route('getProfile', ['user_id' => $scholarship->user->id]) }}">
+                                    <a href="{{ route('getProfile', ['user_id' => $scholarship->user->id]) }}" style="color: inherit;">
                                         {{ $scholarship->user->first_name.' '.$scholarship->user->last_name }}
                                     </a>
                                     <div class="text-muted small">{{ $scholarship->created_at->format('M j, Y') }}</div>
@@ -57,6 +57,7 @@
                     </div>
                 </div>
 
+                @if(Auth::check())
                 <div class="d-flex flex-start p-4 rounded mb-3" style="background-color: #f5f5f5;">
                     <img class="rounded-circle shadow-1-strong me-3 d-block"
                         src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="40"
@@ -76,6 +77,8 @@
                     </form>
                 </div>
                 <hr>
+                @endif
+
                 @foreach ($scholarship->comments as $comment)
                     <x-card-comment :comment=$comment />
                 @endforeach

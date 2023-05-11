@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-auto">
                             <div class="media-body ml-3">
-                                <a href="{{ route('getProfile', ['user_id' => $authorId]) }}">
+                                <a href="{{ route('getProfile', ['user_id' => $authorId]) }}" style="color: inherit;">
                                     {{ $authorName }}
                                 </a>
                                 <div class="text-muted small fw-light" style="font-size: 12px;">{{ $created_at }}</div>
