@@ -37,7 +37,7 @@
                                 @csrf
                                 @method('DELETE')
                                     <input type="hidden" name="forum_id" value="{{ $id }}">
-                                    <button type="submit">Delete</button>
+                                    <button class="deleteButton" type="submit">Delete</button>
                                 </form>
                             </li>
                             @endif

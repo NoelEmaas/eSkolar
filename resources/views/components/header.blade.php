@@ -50,7 +50,7 @@
                     <ul class="list-group list-group-flush rounded">
                         <a href="{{ route('getProfile', ['user_id' => Auth::user()->id ]) }}"><li class="list-group-item list-group-item-action border border-0"><i class="bi bi-person me-1 fs-5"></i> Your Profile</li></a>
                         <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-collection me-2"></i> Own Posts</li>
-                        <li class="list-group-item list-group-item-action border border-0"><i class="bi bi-chat-square-dots me-2"></i> Own Forums</li>
+                        <li class="list-group-item list-group-item-action border border-0">2<i class="bi bi-chat-square-dots me-2"></i> Own Forums</li>
                         <li class="list-group-item list-group-item-action"><i class="bi bi-star me-2"></i> Starred Posts</li>
                         <li class="list-group-item list-group-item-action py-3">
                             <a class="dropdown-item" href="{{ route('logout') }}"
