@@ -7,17 +7,17 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <p class="fs-5 fw-bold text-light pt-3">Ask help to others</p>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ route('addForum') }}" method="POST"">
+            <form action="{{ route('addForum') }}" method="POST">
                 @csrf
                 <div class="modal-body px-4 pb-4">
                     <div class="mb-3">
                         <label for="inputTitle" class="form-label">Discussion Title</label>
-                        <input type="text" name="title" class="form-control" id="inputTitle" aria-describedby="emailHelp"
+                        <input type="text" name="title" class="form-control" aria-describedby="emailHelp"
                             placeholder="Ched Scholarship 2021 Concern">
                     </div>
                     <div class="mb-1">
                         <label for="inputDiscussionInfo" class="form-label">Discussion Information</label>
-                        <textarea class="form-control" name="description" id="inputDiscussionInfo" placeholder="..." style="height: 200px"></textarea>
+                        <textarea class="form-control" name="description" placeholder="..." style="height: 200px"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer px-4 py-3">

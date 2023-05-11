@@ -16,16 +16,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $comment = new CommentResource(Comment::create([
@@ -36,21 +26,6 @@ class CommentController extends Controller
         ]));
 
         return redirect()->back()->with('Succesfully added a comment to a post!');
-    }
-
-    public function show(Comments $comments)
-    {
-        //
-    }
-
-    public function edit(Comments $comments)
-    {
-        //
-    }
-
-    public function update(Request $request, Comments $comments)
-    {
-        //
     }
 
     public function destroy(Request $request)

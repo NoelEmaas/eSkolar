@@ -15,19 +15,9 @@ use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         return view('forums', ['forums' => (new ForumCollection(Forum::all()))->sortByDesc('created_at')]);
-    }
-
-    public function create()
-    {
-        //
     }
 
     public function store(StoreForumRequest $request)
@@ -45,14 +35,15 @@ class ForumController extends Controller
         return view('viewForum', ['forum' => new ForumResource(Forum::find($forum_id))]);
     }
 
-    public function edit(Forum $forum)
+    public function update(Request $request)
     {
-        //
-    }
+        $forum = Forum::find($request->forum_id);
+        $forum->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
 
-    public function update(Request $request, Forum $forum)
-    {
-        //
+        return redirect()->back()->with('Success', 'Successfully updated forum');
     }
 
     public function destroy(Request $request)

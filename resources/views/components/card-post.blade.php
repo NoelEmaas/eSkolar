@@ -57,13 +57,22 @@
                         <li><a class="dropdown-item" href="#">Report</a></li>
                         @if(Auth::check())
                             @if(Auth::user()->id == $authorId)
-                            <li class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#createPostModal">Edit</li>
+                            <li class="dropdown-item" type="button" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#editPostModal"
+                                data-scholarship-id="{{ $id }}"
+                                data-benefactor="{{ $benefactor }}"
+                                data-program="{{ $program }}"
+                                data-amount-min="{{ $amount_min }}"
+                                data-amount-max="{{ $amount_max }}"
+                                data-description="{{ $description }}"
+                                >Edit</li>
                             <li>
                                 <form action="{{ route('deleteScholarship') }}" method="POST"> 
                                 @csrf
                                 @method('DELETE')
                                     <input type="hidden" name="scholarship_id" value="{{ $id }}">
-                                    <button type="submit">Delete</button>
+                                    <button class="deleteButton" type="submit">Delete</button>
                                 </form>
                             </li>
                             @endif
@@ -78,7 +87,7 @@
                     <p class="card-title fw-bold" style="font-size: 16px;">{{ $benefactor }}</p>
                     <p class="card-text fw-bold scholarship-program">{{ $program }}</p>
                 </div>
-                <p class="amount mb-3">Amount: Php {{ $amount_min }} - Php {{ $amount_max }}</p>
+                <p class="amount mb-3">Amount: Php {{ number_format($amount_min, 2) }} - Php {{ number_format($amount_max, 2) }}</p>
                 <div class="post-content">
                     <p>{{ $description }}</p>
                 </div>
@@ -134,6 +143,14 @@
     </div>
 </div>
 
+<style>
+.deleteButton {
+background:none;
+border:none;
+margin-left:1rem;
+padding:0;
+}
+</style>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
@@ -144,4 +161,24 @@
         return new bootstrap.Popover(popoverTriggerEl)
     })
 
+
+    // Load data to edit Post modal
+    window.addEventListener('load', function() {
+        $(document).ready(function () {
+            $("#editPostModal").on("show.bs.modal", function (e) {
+                const benefactor = $(e.relatedTarget).data('benefactor');
+                const program = $(e.relatedTarget).data('program');
+                const amount_min = $(e.relatedTarget).data('amount-min');
+                const amount_max = $(e.relatedTarget).data('amount-max');
+                const description = $(e.relatedTarget).data('description');
+                const scholarship_id = $(e.relatedTarget).data('scholarship-id');
+                $('#inputBenefactor').val(benefactor);
+                $('#inputProgram').val(program);
+                $('#inputAmountMin').val(amount_min);
+                $('#inputAmountMax').val(amount_max);
+                $('#inputDescription').val(description);
+                $('#scholarshipId').val(scholarship_id);
+            });
+        });
+    })
 </script>
