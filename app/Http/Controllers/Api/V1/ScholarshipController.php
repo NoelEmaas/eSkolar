@@ -15,9 +15,23 @@ use Illuminate\Support\Facades\Auth;
 
 class ScholarshipController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('scholarships', ['scholarships' => (new ScholarshipCollection(Scholarship::all()))->sortByDesc('created_at')]);
+        $query = '%'.$request->query('q').'%';
+        if ($query) {
+            return view('scholarships', 
+            ['scholarships' => (new ScholarshipCollection(
+                Scholarship::where('program', 'like', $query)
+                ->orWhere('benefactor', 'like', $query)
+                ->orWhere('description', 'like', $query)
+                ->orWhere('amount_min', 'like', $query)
+                ->orWhere('amount_max', 'like', $query)
+                ->get()
+                ))->sortByDesc('created_at')]);
+        } else {
+            return view('scholarships', 
+            ['scholarships' => (new ScholarshipCollection(Scholarship::all()))->sortByDesc('created_at')]);
+        }
     }
 
     public function store(StoreScholarshipRequest $request)

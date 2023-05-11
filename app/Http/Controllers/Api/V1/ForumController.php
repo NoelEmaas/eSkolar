@@ -17,7 +17,17 @@ class ForumController extends Controller
 {
     public function index(Request $request)
     {
-        return view('forums', ['forums' => (new ForumCollection(Forum::all()))->sortByDesc('created_at')]);
+        $query = '%'.$request->query('q').'%';
+        if ($query) {
+            return view('forums', 
+            ['forums' => (new ForumCollection(
+                Forum::where('title', 'like', $query)
+                ->orWhere('description', 'like', $query)
+                ->get()
+                ))->sortByDesc('created_at')]);
+        } else {
+            return view('forums', ['forums' => (new ForumCollection(Forum::all()))->sortByDesc('created_at')]);
+        }
     }
 
     public function store(StoreForumRequest $request)
