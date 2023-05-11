@@ -55,7 +55,7 @@
                     data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Report</a></li>
-                        @if(request()->is('profile/{{$authorId}}'))
+                        @if(request()->is('profile/' . $authorId))
                             <li><a class="dropdown-item" href="#">Edit </a></li>
                             <li><a class="dropdown-item" href="#">Delete</a></li>
                         @endif
