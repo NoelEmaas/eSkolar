@@ -14,8 +14,8 @@ class Like extends Model
 
     protected $fillable = [
         'user_id',
-        'type',
-        'post_id'
+        'likeable_id',
+        'likeable_type'
     ];
 
     public function likeable(): MorphTo {

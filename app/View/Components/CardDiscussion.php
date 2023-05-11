@@ -5,6 +5,10 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 
 use DateTime;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Forum;
+use App\Models\Like;
 
 class CardDiscussion extends Component
 {
@@ -15,12 +19,16 @@ class CardDiscussion extends Component
     public $description;
     public $likeCount;
     public $commentCount;
+    public $liked_by_user;
     public $created_at;
 
     public function __construct($forum)
     {
-        $createdAt = new DateTime($forum->created_at);
-        $formattedDate = $createdAt->format('M j, Y');
+        $liked = Like::where('user_id', '=', Auth::user()->id)
+                    ->where('likeable_type', '=',Forum::class)
+                    ->where('likeable_id', '=', $forum->id)
+                    ->first();
+        $this->liked_by_user = !is_null($liked);
 
         $this->id = $forum->id;
         $this->authorId = $forum->user->id;
@@ -29,7 +37,7 @@ class CardDiscussion extends Component
         $this->description = $forum->description;
         $this->likeCount = $forum->likeCount;
         $this->commentCount = $forum->commentCount;
-        $this->created_at = $formattedDate;
+        $this->created_at = $forum->created_at;
     }
 
     /**

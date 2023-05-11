@@ -40,7 +40,6 @@ class ScholarshipController extends Controller
 
     public function show(string $scholarship_id)
     {
-        \Log::info(json_encode(new ScholarshipResource(Scholarship::find($scholarship_id))));
         return view('viewScholarship', ['scholarship' => new ScholarshipResource(Scholarship::find($scholarship_id))]);
     }
 

@@ -22,23 +22,22 @@ class ProfileController extends Controller
         $user = User::find($user_id);
         $starred = [];
 
-        $likes = $user->likes();
+        $likes = $user->likes;
 
         foreach ($likes as $like) {
             $post = $like->likeable;
 
-            if ($post->likeable->type === Scholarship::class) {
+            if ($post->likeable_type === Scholarship::class) {
                 array_push($starred, new ScholarshipResource($post));
             } else {
                 array_push($starred, new ForumResource($post));
             }
-
         }
 
         return view('profile', [
             'user' => new UserResource($user),
-            'scholarships' => new ScholarshipCollection(Auth::user()->scholarships),
-            'forums' => new ForumCollection(Auth::user()->forums),
+            'scholarships' => new ScholarshipCollection($user->scholarships),
+            'forums' => new ForumCollection($user->forums),
             'starred' => $starred
         ]);
     }
