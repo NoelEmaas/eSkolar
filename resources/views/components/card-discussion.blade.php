@@ -25,7 +25,7 @@
                         <li><a class="dropdown-item" href="#">Report</a></li>
                         @if(Auth::check())
                             @if(Auth::user()->id == $authorId)
-                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#createForumModal">Edit</li>
                             <li>
                                 <form action="{{ route('deleteForum') }}" method="POST"> 
                                 @csrf
