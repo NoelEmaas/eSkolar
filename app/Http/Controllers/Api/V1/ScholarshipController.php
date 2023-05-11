@@ -53,9 +53,10 @@ class ScholarshipController extends Controller
         $scholarship->update($request->all());
     }
 
-    public function destroy(Scholarship $scholarship)
+    public function destroy(Request $request)
     {
-        $scholarships->delete();
-        return response()->json(Scholarship::all());
+        $scholarship = Scholarship::find($request->scholarship_id);
+        $scholarship->delete();
+        return redirect()->back()->with('Success', 'Successfully deleted scholarship.');
     }
 }

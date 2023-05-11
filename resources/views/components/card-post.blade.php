@@ -57,8 +57,15 @@
                         <li><a class="dropdown-item" href="#">Report</a></li>
                         @if(Auth::check())
                             @if(Auth::user()->id == $authorId)
-                                <li type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createPostModal">Edit</li>
-                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            <li><a class="dropdown-item" href="#">Edit </a></li>
+                            <li>
+                                <form action="{{ route('deleteScholarship') }}" method="POST"> 
+                                @csrf
+                                @method('DELETE')
+                                    <input type="hidden" name="scholarship_id" value="{{ $id }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </li>
                             @endif
                         @endif
                     </ul>

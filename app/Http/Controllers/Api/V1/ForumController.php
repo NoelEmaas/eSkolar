@@ -57,7 +57,7 @@ class ForumController extends Controller
 
     public function destroy(Request $request)
     {
-        $forum = Forum::find($request->id);
+        $forum = Forum::find($request->forum_id);
         $forum->delete();
         return redirect()->back()->with('Success', 'Successfully deleted forum');
     }
