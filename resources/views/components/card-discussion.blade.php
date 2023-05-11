@@ -26,12 +26,12 @@
                         @if(Auth::check())
                             @if(Auth::user()->id == $authorId)
                             <li class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#createForumModal">Edit</li>
-                            <li>
+                            <li class="dropdown-item">
                                 <form action="{{ route('deleteForum') }}" method="POST"> 
                                 @csrf
                                 @method('DELETE')
                                     <input type="hidden" name="forum_id" value="{{ $id }}">
-                                    <button type="submit">Delete</button>
+                                    <button class="btn border-0 p-0" type="submit">Delete</button>
                                 </form>
                             </li>
                             @endif

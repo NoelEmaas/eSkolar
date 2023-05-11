@@ -22,11 +22,11 @@
                   <li><a class="dropdown-item" href="#">Report</a></li>
                   @if(Auth::check() && Auth::user()->id == $authorId)
                   <li><a class="dropdown-item" href="#">Edit</a></li>
-                  <li>
+                  <li class="dropdown-item">
                     <form class="dropdown-item" action="{{ route('delete.comment') }}" method="POST">
                         @csrf 
                         @method('DELETE')
-                        <button type="submit">Delete</input>
+                        <button class="btn p-0 border-0" type="submit">Delete</input>
                         <input type="hidden" name="comment_id" value="{{ $id }}" >
                     </form>
                   </li>
